@@ -13,8 +13,8 @@
       <AnchorPane prefHeight="401.0" prefWidth="600.0">
          <children>
             <Button id="btnContinue" layoutX="229.0" layoutY="352.0" mnemonicParsing="false" onAction="#btnContinue_Clicked" prefHeight="26.0" prefWidth="142.0" text="Continue" />
-            <TextField id="txtProjectCount" fx:id="txtProjectCount" layoutX="257.0" layoutY="294.0" prefHeight="26.0" prefWidth="87.0" styleClass="txtDefault"/>
-            <Label layoutX="14.0" layoutY="263.0" text="Please Enter the Amount of Projects to Evaluate:" />
+            <TextField id="txtProjectCount" fx:id="txtProjectCount" layoutX="339.0" layoutY="271.0" prefHeight="26.0" prefWidth="87.0" styleClass="txtDefault" />
+            <Label layoutX="14.0" layoutY="276.0" text="Please Enter the Amount of Projects to Evaluate:" />
             <Text layoutX="194.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CROSS">
                <font>
                   <Font name="System Bold Italic" size="56.0" />

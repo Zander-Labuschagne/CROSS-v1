@@ -47,8 +47,7 @@ public class CROSS implements Initializable
 	 */
 	public CROSS(int projectCount)
 	{
-		this.laf = "Midna.css";
-		this.exiting = false;
+		this();
 		this.projectCount = projectCount;
 	}
 
@@ -81,14 +80,6 @@ public class CROSS implements Initializable
 		return this.currentStage;
 	}
 
-	/**
-	 * Move on to main window
-	 */
-	@FXML
-	protected void btnContinue_Clicked(ActionEvent event)
-	{
-
-	}
 
 	/**
 	 * Method to prompt before exit
@@ -113,5 +104,57 @@ public class CROSS implements Initializable
 			event.consume();
 		}
 	};
+
+	/**
+	 * method to handle exceptions
+	 * @param ex Exception thrown to handle
+	 */
+	protected void handleException(Exception ex)
+	{
+		handleException(ex, "Error");
+	}
+
+	/**
+	 * method to handle exceptions with optional window title
+	 * @param ex Exception thrown to handle
+	 * @param title to be displayed in message box
+	 */
+	protected void handleException(Exception ex, String title)
+	{
+		handleException(ex, title, ex.getMessage());
+	}
+
+	/**
+	 * method to handle exceptions with optional window title and header
+	 * @param ex Exception thrown to handle
+	 * @param title to be displayed in message box
+	 * @param header caption to be displayed in message box
+	 */
+	protected void handleException(Exception ex, String title, String header)
+	{
+		handleException(ex, title, header, ex.toString());
+	}
+
+	/**
+	 * method to handle exceptions with optional window title, header and message text
+	 * @param ex Exception thrown to handle
+	 * @param title to be displayed in message box
+	 * @param header caption to be displayed in message box
+	 * @param content message for message box to contain
+	 */
+	protected void handleException(Exception ex, String title, String header, String content)
+	{
+		if(ex != null)
+			ex.printStackTrace();
+		Alert error = new Alert(Alert.AlertType.ERROR, content);
+		error.initModality(Modality.APPLICATION_MODAL);
+		error.initOwner(getCurrentStage());
+		error.setTitle(title);
+		error.setHeaderText(header);
+		DialogPane dialogPane = error.getDialogPane();
+		dialogPane.getStylesheets().add(getClass().getResource(laf).toExternalForm());
+		dialogPane.getStyleClass().add("dlgDefault");
+		error.showAndWait();
+	}
 }
 

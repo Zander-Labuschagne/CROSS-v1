@@ -3,10 +3,15 @@ package cryogen;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 import java.net.URL;
@@ -78,7 +83,18 @@ public class CROSSStart implements Initializable
 	{
 		try
 		{
+			txtProjectCount.getStyleClass().remove("txtDefaultError");
+			txtProjectCount.getStyleClass().add("txtDefault");
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("CROSS.fxml"));
+			Stage cross_window  = new Stage(StageStyle.DECORATED);//
+			cross_window.setResizable(false);
+			cross_window.setTitle("CROSS 1.0");
+			cross_window.setScene(new Scene((Pane) loader.load()));
 			CROSS cross = new CROSS(Integer.parseInt(txtProjectCount.getText()));
+			cross.initialize(cross_window);
+			cross_window.show();
+			((Node) (event.getSource())).getScene().getWindow().hide();//Hide Previous Window
 		}
 		catch(NumberFormatException nfex)
 		{

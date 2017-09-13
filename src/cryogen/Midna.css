@@ -37,11 +37,11 @@
 }
 .txtDefault:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 80, 255, 0.6), 5, 0.65, 0, 0);
 }
 .txtDefault:focused
 {
-    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 80, 255, 0.6), 5, 0.65, 0, 0);
 }
 /* The main scrollbar CSS class of TextArea */
 .txtDefault .scroll-bar:horizontal,
@@ -101,96 +101,7 @@
 {
     -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
     -fx-text-fill: rgb(86, 96, 96);
-    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
-}
-.txtDefaultError:hover
-{
-    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
-}
-
-.btnEncryptMessage
-{
-    -fx-background-color: rgb(255, 255, 255);
-    -fx-text-fill: rgb(86, 96, 96);
-    -fx-border-color: rgb(86, 96, 96);
-    -fx-border-width: 0.75;
-    -fx-background-image: url("/icons/lock.png");
-    -fx-background-size: 12px 12px;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: left 12px top 7px;
-}
-
-.btnEncryptMessage:hover
-{
-    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
-    -fx-background-color: rgba(0,93,255,0.1);
-}
-.btnEncryptMessage:focused
-{
-    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
-}
-
-.btnEncryptFiles
-{
-    -fx-background-color: rgb(255, 255, 255);
-    -fx-text-fill: rgb(86, 96, 96);
-    -fx-border-color: rgb(86, 96, 96);
-    -fx-border-width: 0.75;
-    -fx-background-image: url("/icons/lock.png");
-    -fx-background-size: 12px 12px;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: left 12px top 7px;
-}
-.btnEncryptFiles:hover
-{
-    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
-    -fx-background-color: rgba(0,93,255,0.1);
-}
-.btnEncryptFiles:focused
-{
-    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
-}
-
-.btnDecryptMessage
-{
-    -fx-background-color: rgb(255, 255, 255);
-    -fx-text-fill: rgb(86, 96, 96);
-    -fx-border-color: rgb(86, 96, 96);
-    -fx-border-width: 0.75;
-    -fx-background-image: url("/icons/unlock.png");
-    -fx-background-size: 13px 16px;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: left 14px top 5px;
-}
-.btnDecryptMessage:hover
-{
-   -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 1), 5, 0.65, 0, 0);
-   -fx-background-color: rgba(0,93,255,0.1);
-}
-.btnDecryptMessage:focused
-{
-   -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
-}
-
-.btnDecryptFiles
-{
-    -fx-background-color: rgb(255, 255, 255);
-    -fx-text-fill: rgb(86, 96, 96);
-    -fx-border-color: rgb(86, 96, 96);
-    -fx-border-width: 0.75;
-    -fx-background-image: url("/icons/unlock.png");
-    -fx-background-size: 13px 16px;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: left 12px top 5px;
-}
-.btnDecryptFiles:hover
-{
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 1), 5, 0.65, 0, 0);
-    -fx-background-color: rgba(0,93,255,0.1);
-}
-.btnDecryptFiles:focused
-{
-    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 1), 5, 0.65, 0, 0);
 }
 
 .pneDefault
@@ -716,7 +627,7 @@
 .combo-box-base:focused,
 .slider:focused .thumb*/
 {
-    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 80, 256, 0.6), 5, 0.65, 0, 0);
     -fx-background-insets: -0.2, 1, 2, -1.4, 2.6;
     -fx-background-radius: 3, 2, 1, 4, 1;
 }
