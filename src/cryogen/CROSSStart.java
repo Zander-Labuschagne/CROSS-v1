@@ -76,7 +76,7 @@ public class CROSSStart implements Initializable
 	}
 
 	/**
-	 * Move on to main window
+	 * Move on to criterions window
 	 */
 	@FXML
 	protected void btnContinue_Clicked(ActionEvent event)
@@ -86,13 +86,13 @@ public class CROSSStart implements Initializable
 			txtProjectCount.getStyleClass().remove("txtDefaultError");
 			txtProjectCount.getStyleClass().add("txtDefault");
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("CROSS.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Criterions.fxml"));
 			Stage cross_window  = new Stage(StageStyle.DECORATED);//
 			cross_window.setResizable(false);
 			cross_window.setTitle("CROSS 1.0");
 			cross_window.setScene(new Scene((Pane) loader.load()));
-			CROSS cross = new CROSS(Integer.parseInt(txtProjectCount.getText()));
-			cross.initialize(cross_window);
+			Criterions criterions = new Criterions(Integer.parseInt(txtProjectCount.getText()));
+			criterions.initialize(cross_window);
 			cross_window.show();
 			((Node) (event.getSource())).getScene().getWindow().hide();//Hide Previous Window
 		}

@@ -10,9 +10,7 @@ package cryogen;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -24,11 +22,6 @@ public class Main extends Application
     @Override
     public void start(Stage startStage) throws Exception
     {
-        /*Parent root = FXMLLoader.load(getClass().getResource("CROSSStart.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();*/
-
 	    startStage.initStyle(StageStyle.DECORATED);
 	    //startStage.getIcons().add(new Image(getClass().getResourceAsStream("/icons/cryogen/icon.png")));
 	    startStage.setTitle("CROSS 1.0");
@@ -37,8 +30,6 @@ public class Main extends Application
 		    loader = new FXMLLoader(getClass().getResource("CryptogenWindows.fxml"));
 	    else*/
 		    loader = new FXMLLoader(getClass().getResource("CROSSStart.fxml"));
-	   // startStage.setHeight(605);
-	    //startStage.setWidth(720);
 	    startStage.setResizable(false);
 	    startStage.setScene(createScene(loader.load()));
 	    startStage.getScene().getStylesheets().add(getClass().getResource("Midna.css").toExternalForm());

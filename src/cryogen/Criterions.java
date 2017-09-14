@@ -3,10 +3,15 @@ package cryogen;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 import java.net.URL;
@@ -21,7 +26,7 @@ import java.util.ResourceBundle;
  * This program is free software; you can redistribute it and/or modify it under the terms of the Apache Version 2.0 License
  */
 
-public class CROSS implements Initializable
+public class Criterions implements Initializable
 {
 	//Instance Variables
 	public static String laf;
@@ -36,7 +41,7 @@ public class CROSS implements Initializable
 	/**
 	 * Default Constructor
 	 */
-	public CROSS()
+	public Criterions()
 	{
 		this.laf = "Midna.css";
 		this.exiting = false;
@@ -45,7 +50,7 @@ public class CROSS implements Initializable
 	/**
 	 * Overloaded Constructor
 	 */
-	public CROSS(int projectCount)
+	public Criterions(int projectCount)
 	{
 		this();
 		this.projectCount = projectCount;
@@ -78,6 +83,42 @@ public class CROSS implements Initializable
 	public Stage getCurrentStage()
 	{
 		return this.currentStage;
+	}
+
+	/**
+	 * Move on to criterions window
+	 */
+	@FXML
+	protected void btnContinue_Clicked(ActionEvent event)
+	{
+		try
+		{
+			txtProjectCount.getStyleClass().remove("txtDefaultError");
+			txtProjectCount.getStyleClass().add("txtDefault");
+
+			FXMLLoader loader       = new FXMLLoader(getClass().getResource("Criterions.fxml"));
+			Stage      cross_window = new Stage(StageStyle.DECORATED);//
+			cross_window.setResizable(false);
+			cross_window.setTitle("CROSS 1.0");
+			cross_window.setScene(new Scene((Pane) loader.load()));
+			Criterions criterions = new Criterions(Integer.parseInt(txtProjectCount.getText()));
+			criterions.initialize(cross_window);
+			cross_window.show();
+			((Node) (event.getSource())).getScene().getWindow().hide();//Hide Previous Window
+		}
+		catch(NumberFormatException nfex)
+		{
+			txtProjectCount.getStyleClass().remove("txtDefault");
+			txtProjectCount.getStyleClass().add("txtDefaultError");
+			nfex.printStackTrace();
+			txtProjectCount.requestFocus();
+			handleException(nfex, "Number Format Exception", "The amount of projects is unacceptable", "Please enter a valid number of projects to evaluate.");
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+			handleException(ex);
+		}
 	}
 
 
