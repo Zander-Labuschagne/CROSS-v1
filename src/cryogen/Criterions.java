@@ -8,12 +8,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
-
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -33,9 +33,29 @@ public class Criterions implements Initializable
 	private Stage currentStage;
 	private boolean exiting;
 	private int projectCount;
+	private int pC;
 	//GUI Variables
+	@FXML private AnchorPane anchorPane;
 	@FXML private Button btnContinue;
-	@FXML private TextField txtProjectCount;
+	@FXML private TextField txtCriterion1;
+	@FXML private TextField txtCriterion2;
+	@FXML private TextField txtCriterion3;
+	@FXML private TextField txtCriterion4;
+	@FXML private TextField txtCriterion5;
+	@FXML private TextField txtCriterion6;
+	@FXML private TextField txtCriterion7;
+	@FXML private TextField txtCriterion8;
+	@FXML private TextField txtCriterion9;
+	@FXML private Slider sldCriterion1;
+	@FXML private Slider sldCriterion2;
+	@FXML private Slider sldCriterion3;
+	@FXML private Slider sldCriterion4;
+	@FXML private Slider sldCriterion5;
+	@FXML private Slider sldCriterion6;
+	@FXML private Slider sldCriterion7;
+	@FXML private Slider sldCriterion8;
+	@FXML private Slider sldCriterion9;
+
 
 
 	/**
@@ -43,17 +63,19 @@ public class Criterions implements Initializable
 	 */
 	public Criterions()
 	{
-		this.laf = "Midna.css";
 		this.exiting = false;
 	}
 
 	/**
 	 * Overloaded Constructor
 	 */
-	public Criterions(int projectCount)
+	Criterions(int projectCount, String p_laf)
 	{
 		this();
-		this.projectCount = projectCount;
+		laf = p_laf;
+		setProjectCount(CROSSStart.projectCount);
+		System.out.println(this.projectCount);
+
 	}
 
 	/**
@@ -71,7 +93,7 @@ public class Criterions implements Initializable
 	 * Initialize method for GUI
 	 * @param currentStage
 	 */
-	public void initialize(Stage currentStage)
+	void initialize(Stage currentStage)
 	{
 		this.currentStage = currentStage;
 		getCurrentStage().setOnCloseRequest(confirmCloseEventHandler);//Set default close event
@@ -80,7 +102,7 @@ public class Criterions implements Initializable
 
 	}
 
-	public Stage getCurrentStage()
+	private Stage getCurrentStage()
 	{
 		return this.currentStage;
 	}
@@ -93,32 +115,51 @@ public class Criterions implements Initializable
 	{
 		try
 		{
-			txtProjectCount.getStyleClass().remove("txtDefaultError");
-			txtProjectCount.getStyleClass().add("txtDefault");
+			//TODO: Replace hardcode with dynamically scalable criterions
+			String criterionNames[] = new String[9];
+			int criterionValues[] = new int[9];//Values ranges from 0 to 100
+			int cN, cV;
+			cN = cV = 0;
 
-			FXMLLoader loader       = new FXMLLoader(getClass().getResource("Criterions.fxml"));
+			//Traverse through all components inside/on anchorPane
+			for (Node node : anchorPane.getChildren())
+			{
+				//System.out.println("Id: " + node.getId());
+				if (node instanceof TextField && !((TextField)node).getText().equals(""))
+					criterionNames[cN++] = ((TextField)node).getText();
+				else if (node instanceof Slider)
+					criterionValues[cV++] = ((int) ((Slider) node).getValue());
+			}
+			int criterionCount = cN;
+
+			FXMLLoader loader       = new FXMLLoader(getClass().getResource("CriterionIterator.fxml"));
 			Stage      cross_window = new Stage(StageStyle.DECORATED);//
 			cross_window.setResizable(false);
 			cross_window.setTitle("CROSS 1.0");
 			cross_window.setScene(new Scene((Pane) loader.load()));
-			Criterions criterions = new Criterions(Integer.parseInt(txtProjectCount.getText()));
-			criterions.initialize(cross_window);
+			//CriterionIterator criterions = new CriterionIterator(laf, 0, projectCount, criterionCount, criterionNames, criterionValues);
+
+			CriterionIterator criterions = loader.<CriterionIterator>getController();
+			criterions.initialize(cross_window, laf, 0, CROSSStart.projectCount, criterionCount, criterionNames, criterionValues);
+
 			cross_window.show();
 			((Node) (event.getSource())).getScene().getWindow().hide();//Hide Previous Window
-		}
-		catch(NumberFormatException nfex)
-		{
-			txtProjectCount.getStyleClass().remove("txtDefault");
-			txtProjectCount.getStyleClass().add("txtDefaultError");
-			nfex.printStackTrace();
-			txtProjectCount.requestFocus();
-			handleException(nfex, "Number Format Exception", "The amount of projects is unacceptable", "Please enter a valid number of projects to evaluate.");
 		}
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
 			handleException(ex);
 		}
+	}
+
+	public void setProjectCount(int projectCount)
+	{
+		this.projectCount = projectCount;
+	}
+
+	public int getProjectCount()
+	{
+		return this.projectCount;
 	}
 
 

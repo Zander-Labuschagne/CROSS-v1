@@ -13,7 +13,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
-
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -35,6 +34,7 @@ public class CROSSStart implements Initializable
 	//GUI Variables
 	@FXML private Button btnContinue;
 	@FXML private TextField txtProjectCount;
+	static int projectCount;
 
 
 	/**
@@ -91,7 +91,8 @@ public class CROSSStart implements Initializable
 			cross_window.setResizable(false);
 			cross_window.setTitle("CROSS 1.0");
 			cross_window.setScene(new Scene((Pane) loader.load()));
-			Criterions criterions = new Criterions(Integer.parseInt(txtProjectCount.getText()));
+			projectCount = Integer.parseInt(txtProjectCount.getText());
+			Criterions criterions = new Criterions(Integer.parseInt(txtProjectCount.getText()), laf);
 			criterions.initialize(cross_window);
 			cross_window.show();
 			((Node) (event.getSource())).getScene().getWindow().hide();//Hide Previous Window

@@ -4,16 +4,11 @@
     <bookmark url="file://$PROJECT_DIR$" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CROSS/cryogen/CROSS.fxml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cryogen/CROSS.fxml" afterPath="$PROJECT_DIR$/src/cryogen/Criterions.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cryogen/CROSS.java" afterPath="$PROJECT_DIR$/src/cryogen/Criterions.java" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added Criterions specification mennu">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CROSS.iml" afterPath="$PROJECT_DIR$/CROSS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CROSS/cryogen/CROSSStart.fxml" afterPath="$PROJECT_DIR$/out/production/CROSS/cryogen/CROSSStart.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/CROSSStart.fxml" afterPath="$PROJECT_DIR$/src/cryogen/CROSSStart.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/CROSSStart.java" afterPath="$PROJECT_DIR$/src/cryogen/CROSSStart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Main.java" afterPath="$PROJECT_DIR$/src/cryogen/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Criterions.fxml" afterPath="$PROJECT_DIR$/src/cryogen/Criterions.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Criterions.java" afterPath="$PROJECT_DIR$/src/cryogen/Criterions.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,6 +19,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/CROSS$Main.coverage" NAME="Main Coverage Results" MODIFIED="1505423585368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cryogen.*</FILTER>
+    </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -80,7 +80,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cryogen/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
+            <state relative-caret-position="475">
               <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -92,9 +92,11 @@
       <file leaf-file-name="CROSSStart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cryogen/CROSSStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="111" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="342">
+              <caret line="93" column="71" lean-forward="true" selection-start-line="93" selection-start-column="71" selection-end-line="93" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,25 +104,42 @@
       <file leaf-file-name="Criterions.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cryogen/Criterions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="117" column="9" lean-forward="true" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="1686">
+              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3890#3909#0" expanded="true" />
+                <element signature="e#4293#4294#0" expanded="true" />
+                <element signature="e#4332#4333#0" expanded="true" />
+                <element signature="e#4366#4367#0" expanded="true" />
+                <element signature="e#4397#4398#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Criterions.fxml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cryogen/Criterions.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
+      <file leaf-file-name="CriterionIterator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cryogen/CriterionIterator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            <state relative-caret-position="207">
+              <caret line="90" column="41" lean-forward="true" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
               <folding>
-                <marker date="1505406932461" expanded="true" signature="4109:4169" ph="..." />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CriterionIterator.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cryogen/CriterionIterator.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -147,9 +166,11 @@
         <option value="$PROJECT_DIR$/src/cryogen/Midna.css" />
         <option value="$PROJECT_DIR$/src/cryogen/Main.java" />
         <option value="$PROJECT_DIR$/src/cryogen/CROSSStart.fxml" />
+        <option value="$PROJECT_DIR$/src/cryogen/Criterions.fxml" />
+        <option value="$PROJECT_DIR$/src/cryogen/CriterionIterator.fxml" />
         <option value="$PROJECT_DIR$/src/cryogen/CROSSStart.java" />
         <option value="$PROJECT_DIR$/src/cryogen/Criterions.java" />
-        <option value="$PROJECT_DIR$/src/cryogen/Criterions.fxml" />
+        <option value="$PROJECT_DIR$/src/cryogen/CriterionIterator.java" />
       </list>
     </option>
   </component>
@@ -183,6 +204,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,10 +230,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,7 +401,8 @@
       <workItem from="1505209086539" duration="2511000" />
       <workItem from="1505294302434" duration="314000" />
       <workItem from="1505378510758" duration="163000" />
-      <workItem from="1505401862583" duration="3315000" />
+      <workItem from="1505401862583" duration="19984000" />
+      <workItem from="1505425381077" duration="1385000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed errors, now runnable">
       <created>1503778217081</created>
@@ -389,19 +411,26 @@
       <option name="project" value="LOCAL" />
       <updated>1503778217081</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Criterions specification mennu">
+      <created>1505406975053</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1505406975054</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14609000" />
+    <option name="totallyTimeSpent" value="32663000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-24" width="1922" height="1105" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840237" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -429,6 +458,7 @@
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="5.2083336E-4" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
@@ -477,7 +507,8 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Fixed errors, now runnable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed errors, now runnable" />
+    <MESSAGE value="Added Criterions specification mennu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Criterions specification mennu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -490,6 +521,62 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/cryogen/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryogen/CROSSStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryogen/CriterionIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="79" column="86" lean-forward="true" selection-start-line="79" selection-start-column="86" selection-end-line="79" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryogen/CriterionIterator.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryogen/Criterions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2147">
+          <caret line="135" column="103" lean-forward="true" selection-start-line="135" selection-start-column="103" selection-end-line="135" selection-end-column="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3890#3909#0" expanded="true" />
+            <element signature="e#4293#4294#0" expanded="true" />
+            <element signature="e#4332#4333#0" expanded="true" />
+            <element signature="e#4366#4367#0" expanded="true" />
+            <element signature="e#4397#4398#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryogen/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="44" column="50" lean-forward="false" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
           <folding>
@@ -499,21 +586,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/CROSSStart.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="15" column="157" lean-forward="false" selection-start-line="15" selection-start-column="157" selection-end-line="15" selection-end-column="157" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/Midna.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1352">
           <caret line="104" column="1" lean-forward="false" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -521,7 +607,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
           <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -539,26 +627,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1633">
           <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/CROSSStart.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="157" lean-forward="false" selection-start-line="15" selection-start-column="157" selection-end-line="15" selection-end-column="157" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/Midna.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2392">
           <caret line="104" column="1" lean-forward="false" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -573,21 +662,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/CROSSStart.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="157" lean-forward="false" selection-start-line="15" selection-start-column="157" selection-end-line="15" selection-end-column="157" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/Midna.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2392">
           <caret line="104" column="1" lean-forward="true" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -595,7 +683,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1633">
           <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -613,7 +703,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1104">
           <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -631,7 +723,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="754">
           <caret line="72" column="7" lean-forward="true" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -649,19 +743,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1311">
           <caret line="83" column="5" lean-forward="false" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/CROSSStart.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
@@ -672,27 +768,50 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/CROSSStart.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/Midna.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1352">
           <caret line="104" column="1" lean-forward="false" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryogen/CROSSStart.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="10" column="239" lean-forward="false" selection-start-line="10" selection-start-column="239" selection-end-line="10" selection-end-column="239" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryogen/Criterions.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="10" column="265" lean-forward="true" selection-start-line="10" selection-start-column="265" selection-end-line="10" selection-end-column="265" />
+          <folding>
+            <marker date="1505418919722" expanded="true" signature="4326:4386" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
+        <state relative-caret-position="475">
           <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -700,42 +819,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cryogen/CROSSStart.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/cryogen/CriterionIterator.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="10" column="239" lean-forward="false" selection-start-line="10" selection-start-column="239" selection-end-line="10" selection-end-column="239" />
+        <state relative-caret-position="399">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/CROSSStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="111" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="342">
+          <caret line="93" column="71" lean-forward="true" selection-start-line="93" selection-start-column="71" selection-end-line="93" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/Criterions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="117" column="9" lean-forward="true" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="1686">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3890#3909#0" expanded="true" />
+            <element signature="e#4293#4294#0" expanded="true" />
+            <element signature="e#4332#4333#0" expanded="true" />
+            <element signature="e#4366#4367#0" expanded="true" />
+            <element signature="e#4397#4398#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cryogen/Criterions.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/cryogen/CriterionIterator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="207">
+          <caret line="90" column="41" lean-forward="true" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
           <folding>
-            <marker date="1505406932461" expanded="true" signature="4109:4169" ph="..." />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
