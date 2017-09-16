@@ -1,7 +1,6 @@
 package cryogen;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,12 +8,9 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.stage.WindowEvent;
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
@@ -28,22 +24,17 @@ import java.util.ResourceBundle;
 public class CROSSStart implements Initializable
 {
 	//Instance Variables
-	public static String laf;
+	private SharedMemoryRepository memory;
 	private Stage currentStage;
-	private boolean exiting;
 	//GUI Variables
-	@FXML private Button btnContinue;
 	@FXML private TextField txtProjectCount;
-	static int projectCount;
-
 
 	/**
 	 * Default Constructor
 	 */
 	public CROSSStart()
 	{
-		laf = "Midna.css";
-		exiting = false;
+		setMemory(new SharedMemoryRepository());
 	}
 
 	/**
@@ -63,16 +54,32 @@ public class CROSSStart implements Initializable
 	 */
 	public void initialize(Stage currentStage)
 	{
-		this.currentStage = currentStage;
-		getCurrentStage().setOnCloseRequest(confirmCloseEventHandler);//Set default close event
+		setCurrentStage(currentStage);
+		setMemory(new SharedMemoryRepository(getCurrentStage()));
+		getCurrentStage().setOnCloseRequest(getMemory().confirmCloseEventHandler);//Set default close event
 		//txtProjectCount.requestFocus();
 		//mnuLaF_BreathDark_Clicked(new ActionEvent());
 
 	}
 
+	public void setCurrentStage(Stage stage)
+	{
+		this.currentStage = stage;
+	}
+
 	public Stage getCurrentStage()
 	{
 		return this.currentStage;
+	}
+
+	public void setMemory(SharedMemoryRepository memory)
+	{
+		this.memory = memory;
+	}
+
+	public SharedMemoryRepository getMemory()
+	{
+		return this.memory;
 	}
 
 	/**
@@ -91,8 +98,8 @@ public class CROSSStart implements Initializable
 			cross_window.setResizable(false);
 			cross_window.setTitle("CROSS 1.0");
 			cross_window.setScene(new Scene((Pane) loader.load()));
-			projectCount = Integer.parseInt(txtProjectCount.getText());
-			Criterions criterions = new Criterions(Integer.parseInt(txtProjectCount.getText()), laf);
+			SharedMemoryRepository.setProject_count(Integer.parseInt(txtProjectCount.getText()));
+			Criterions criterions = new Criterions();
 			criterions.initialize(cross_window);
 			cross_window.show();
 			((Node) (event.getSource())).getScene().getWindow().hide();//Hide Previous Window
@@ -103,89 +110,13 @@ public class CROSSStart implements Initializable
 			txtProjectCount.getStyleClass().add("txtDefaultError");
 			nfex.printStackTrace();
 			txtProjectCount.requestFocus();
-			handleException(nfex, "Number Format Exception", "The amount of projects is unacceptable", "Please enter a valid number of projects to evaluate.");
+			getMemory().handleException(nfex, "Number Format Exception", "The amount of projects is unacceptable", "Please enter a valid number of projects to evaluate.");
 		}
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
-			handleException(ex);
+			getMemory().handleException(ex);
 		}
-	}
-
-	/**
-	 * Method to prompt before exit
-	 * Exits application with 0 error code if user prompt is confirmed else application continues
-	 */
-	private EventHandler<WindowEvent> confirmCloseEventHandler = event ->
-	{
-		Alert closeConfirmation = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to exit?");
-		Button exitButton = (Button) closeConfirmation.getDialogPane().lookupButton(ButtonType.OK);
-		exitButton.setText("Exit");
-		closeConfirmation.setHeaderText("Confirm Exit");
-		closeConfirmation.initModality(Modality.APPLICATION_MODAL);
-		closeConfirmation.initOwner(getCurrentStage());
-		exiting = true;
-		DialogPane dialogPane = closeConfirmation.getDialogPane();
-		dialogPane.getStylesheets().add(getClass().getResource(laf).toExternalForm());
-		dialogPane.getStyleClass().add("dlgDefault");
-		Optional<ButtonType> closeResponse = closeConfirmation.showAndWait();
-		if (!ButtonType.OK.equals(closeResponse.get()))
-		{
-			exiting = false;
-			event.consume();
-		}
-	};
-
-	/**
-	 * method to handle exceptions
-	 * @param ex Exception thrown to handle
-	 */
-	protected void handleException(Exception ex)
-	{
-		handleException(ex, "Error");
-	}
-
-	/**
-	 * method to handle exceptions with optional window title
-	 * @param ex Exception thrown to handle
-	 * @param title to be displayed in message box
-	 */
-	protected void handleException(Exception ex, String title)
-	{
-		handleException(ex, title, ex.getMessage());
-	}
-
-	/**
-	 * method to handle exceptions with optional window title and header
-	 * @param ex Exception thrown to handle
-	 * @param title to be displayed in message box
-	 * @param header caption to be displayed in message box
-	 */
-	protected void handleException(Exception ex, String title, String header)
-	{
-		handleException(ex, title, header, ex.toString());
-	}
-
-	/**
-	 * method to handle exceptions with optional window title, header and message text
-	 * @param ex Exception thrown to handle
-	 * @param title to be displayed in message box
-	 * @param header caption to be displayed in message box
-	 * @param content message for message box to contain
-	 */
-	protected void handleException(Exception ex, String title, String header, String content)
-	{
-		if(ex != null)
-			ex.printStackTrace();
-		Alert error = new Alert(Alert.AlertType.ERROR, content);
-		error.initModality(Modality.APPLICATION_MODAL);
-		error.initOwner(getCurrentStage());
-		error.setTitle(title);
-		error.setHeaderText(header);
-		DialogPane dialogPane = error.getDialogPane();
-		dialogPane.getStylesheets().add(getClass().getResource(laf).toExternalForm());
-		dialogPane.getStyleClass().add("dlgDefault");
-		error.showAndWait();
 	}
 }
 

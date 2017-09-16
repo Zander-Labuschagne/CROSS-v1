@@ -22,6 +22,10 @@ public class Main extends Application
     @Override
     public void start(Stage startStage) throws Exception
     {
+    	//Initialize...\\TODO: finish
+    	SharedMemoryRepository.setExitingStatus(false);
+	    SharedMemoryRepository.setLaF("Midna.css");
+
 	    startStage.initStyle(StageStyle.DECORATED);
 	    //startStage.getIcons().add(new Image(getClass().getResourceAsStream("/icons/cryogen/icon.png")));
 	    startStage.setTitle("CROSS 1.0");

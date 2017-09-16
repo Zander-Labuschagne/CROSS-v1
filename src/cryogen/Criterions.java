@@ -29,11 +29,8 @@ import java.util.ResourceBundle;
 public class Criterions implements Initializable
 {
 	//Instance Variables
-	public static String laf;
 	private Stage currentStage;
-	private boolean exiting;
-	private int projectCount;
-	private int pC;
+	private SharedMemoryRepository memory;
 	//GUI Variables
 	@FXML private AnchorPane anchorPane;
 	@FXML private Button btnContinue;
@@ -63,19 +60,7 @@ public class Criterions implements Initializable
 	 */
 	public Criterions()
 	{
-		this.exiting = false;
-	}
-
-	/**
-	 * Overloaded Constructor
-	 */
-	Criterions(int projectCount, String p_laf)
-	{
-		this();
-		laf = p_laf;
-		setProjectCount(CROSSStart.projectCount);
-		System.out.println(this.projectCount);
-
+		setMemory(new SharedMemoryRepository());
 	}
 
 	/**
@@ -95,16 +80,31 @@ public class Criterions implements Initializable
 	 */
 	void initialize(Stage currentStage)
 	{
-		this.currentStage = currentStage;
-		getCurrentStage().setOnCloseRequest(confirmCloseEventHandler);//Set default close event
+		setCurrentStage(currentStage);
+		setMemory(new SharedMemoryRepository(getCurrentStage()));
+		getCurrentStage().setOnCloseRequest(getMemory().confirmCloseEventHandler);//Set default close event
 		//txtProjectCount.requestFocus();
 		//mnuLaF_BreathDark_Clicked(new ActionEvent());
+	}
 
+	private void setCurrentStage(Stage stage)
+	{
+		this.currentStage = stage;
 	}
 
 	private Stage getCurrentStage()
 	{
 		return this.currentStage;
+	}
+
+	public void setMemory(SharedMemoryRepository memory)
+	{
+		this.memory = memory;
+	}
+
+	public SharedMemoryRepository getMemory()
+	{
+		return this.memory;
 	}
 
 	/**
@@ -116,8 +116,6 @@ public class Criterions implements Initializable
 		try
 		{
 			//TODO: Replace hardcode with dynamically scalable criterions
-			String criterionNames[] = new String[9];
-			int criterionValues[] = new int[9];//Values ranges from 0 to 100
 			int cN, cV;
 			cN = cV = 0;
 
@@ -126,11 +124,11 @@ public class Criterions implements Initializable
 			{
 				//System.out.println("Id: " + node.getId());
 				if (node instanceof TextField && !((TextField)node).getText().equals(""))
-					criterionNames[cN++] = ((TextField)node).getText();
+					SharedMemoryRepository.setCriterion_names(cN++, ((TextField)node).getText());
 				else if (node instanceof Slider)
-					criterionValues[cV++] = ((int) ((Slider) node).getValue());
+					SharedMemoryRepository.setCriterion_values(cV++, ((int) ((Slider) node).getValue()));
 			}
-			int criterionCount = cN;
+			SharedMemoryRepository.setCriterion_count(cN);
 
 			FXMLLoader loader       = new FXMLLoader(getClass().getResource("CriterionIterator.fxml"));
 			Stage      cross_window = new Stage(StageStyle.DECORATED);//
@@ -140,7 +138,7 @@ public class Criterions implements Initializable
 			//CriterionIterator criterions = new CriterionIterator(laf, 0, projectCount, criterionCount, criterionNames, criterionValues);
 
 			CriterionIterator criterions = loader.<CriterionIterator>getController();
-			criterions.initialize(cross_window, laf, 0, CROSSStart.projectCount, criterionCount, criterionNames, criterionValues);
+			criterions.initialize(cross_window);
 
 			cross_window.show();
 			((Node) (event.getSource())).getScene().getWindow().hide();//Hide Previous Window
@@ -148,95 +146,8 @@ public class Criterions implements Initializable
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
-			handleException(ex);
+			getMemory().handleException(ex);
 		}
-	}
-
-	public void setProjectCount(int projectCount)
-	{
-		this.projectCount = projectCount;
-	}
-
-	public int getProjectCount()
-	{
-		return this.projectCount;
-	}
-
-
-	/**
-	 * Method to prompt before exit
-	 * Exits application with 0 error code if user prompt is confirmed else application continues
-	 */
-	private EventHandler<WindowEvent> confirmCloseEventHandler = event ->
-	{
-		Alert closeConfirmation = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to exit?");
-		Button exitButton = (Button) closeConfirmation.getDialogPane().lookupButton(ButtonType.OK);
-		exitButton.setText("Exit");
-		closeConfirmation.setHeaderText("Confirm Exit");
-		closeConfirmation.initModality(Modality.APPLICATION_MODAL);
-		closeConfirmation.initOwner(getCurrentStage());
-		exiting = true;
-		DialogPane dialogPane = closeConfirmation.getDialogPane();
-		dialogPane.getStylesheets().add(getClass().getResource(laf).toExternalForm());
-		dialogPane.getStyleClass().add("dlgDefault");
-		Optional<ButtonType> closeResponse = closeConfirmation.showAndWait();
-		if (!ButtonType.OK.equals(closeResponse.get()))
-		{
-			exiting = false;
-			event.consume();
-		}
-	};
-
-	/**
-	 * method to handle exceptions
-	 * @param ex Exception thrown to handle
-	 */
-	protected void handleException(Exception ex)
-	{
-		handleException(ex, "Error");
-	}
-
-	/**
-	 * method to handle exceptions with optional window title
-	 * @param ex Exception thrown to handle
-	 * @param title to be displayed in message box
-	 */
-	protected void handleException(Exception ex, String title)
-	{
-		handleException(ex, title, ex.getMessage());
-	}
-
-	/**
-	 * method to handle exceptions with optional window title and header
-	 * @param ex Exception thrown to handle
-	 * @param title to be displayed in message box
-	 * @param header caption to be displayed in message box
-	 */
-	protected void handleException(Exception ex, String title, String header)
-	{
-		handleException(ex, title, header, ex.toString());
-	}
-
-	/**
-	 * method to handle exceptions with optional window title, header and message text
-	 * @param ex Exception thrown to handle
-	 * @param title to be displayed in message box
-	 * @param header caption to be displayed in message box
-	 * @param content message for message box to contain
-	 */
-	protected void handleException(Exception ex, String title, String header, String content)
-	{
-		if(ex != null)
-			ex.printStackTrace();
-		Alert error = new Alert(Alert.AlertType.ERROR, content);
-		error.initModality(Modality.APPLICATION_MODAL);
-		error.initOwner(getCurrentStage());
-		error.setTitle(title);
-		error.setHeaderText(header);
-		DialogPane dialogPane = error.getDialogPane();
-		dialogPane.getStylesheets().add(getClass().getResource(laf).toExternalForm());
-		dialogPane.getStyleClass().add("dlgDefault");
-		error.showAndWait();
 	}
 }
 
