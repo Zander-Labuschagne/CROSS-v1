@@ -11,12 +11,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CROSS/cryogen/Criterions.fxml" afterPath="$PROJECT_DIR$/out/production/CROSS/cryogen/Criterions.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CROSS/cryogen/Midna.css" afterPath="$PROJECT_DIR$/out/production/CROSS/cryogen/Midna.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CROSS/cryogen/Results.fxml" afterPath="$PROJECT_DIR$/out/production/CROSS/cryogen/Results.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/CROSSStart.fxml" afterPath="$PROJECT_DIR$/src/cryogen/CROSSStart.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/CriterionIterator.fxml" afterPath="$PROJECT_DIR$/src/cryogen/CriterionIterator.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Criterions.fxml" afterPath="$PROJECT_DIR$/src/cryogen/Criterions.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Midna.css" afterPath="$PROJECT_DIR$/src/cryogen/Midna.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Results.fxml" afterPath="$PROJECT_DIR$/src/cryogen/Results.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Results.java" afterPath="$PROJECT_DIR$/src/cryogen/Results.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -475,7 +469,7 @@
       <workItem from="1505378510758" duration="163000" />
       <workItem from="1505401862583" duration="19984000" />
       <workItem from="1505425381077" duration="1461000" />
-      <workItem from="1505565512633" duration="41845000" />
+      <workItem from="1505565512633" duration="41851000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed errors, now runnable">
       <created>1503778217081</created>
@@ -512,11 +506,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505626522616</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated sliders to 10 instead of 100">
+      <created>1505628456589</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1505628456589</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74584000" />
+    <option name="totallyTimeSpent" value="74590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
