@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="Midna.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.Criterions">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.Criterions">
    <children>
       <AnchorPane fx:id="anchorPane" prefHeight="401.0" prefWidth="600.0">
          <children>
@@ -27,31 +27,31 @@
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
-            <Slider fx:id="sldCriterion1" layoutX="385.0" layoutY="85.0" min="1.0" prefHeight="16.0" prefWidth="203.0" />
+            <Slider fx:id="sldCriterion1" blockIncrement="1.0" layoutX="385.0" layoutY="85.0" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" prefHeight="16.0" prefWidth="203.0" />
             <TextField id="txtProjectCount" fx:id="txtCriterion2" layoutX="110.0" layoutY="110.0" prefHeight="26.0" prefWidth="258.0" />
             <Label layoutX="12.0" layoutY="115.0" text="Criterion 2:" />
-            <Slider fx:id="sldCriterion2" layoutX="385.0" layoutY="115.0" min="1.0" prefHeight="16.0" prefWidth="203.0" />
+            <Slider fx:id="sldCriterion2" blockIncrement="1.0" layoutX="385.0" layoutY="115.0" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" prefHeight="16.0" prefWidth="203.0" />
             <TextField id="txtProjectCount" fx:id="txtCriterion3" layoutX="110.0" layoutY="140.0" prefHeight="26.0" prefWidth="258.0" />
             <Label layoutX="12.0" layoutY="145.0" text="Criterion 3:" />
-            <Slider fx:id="sldCriterion3" layoutX="385.0" layoutY="145.0" min="1.0" prefHeight="16.0" prefWidth="203.0" />
+            <Slider fx:id="sldCriterion3" blockIncrement="1.0" layoutX="385.0" layoutY="145.0" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" prefHeight="16.0" prefWidth="203.0" />
             <TextField id="txtProjectCount" fx:id="txtCriterion4" layoutX="110.0" layoutY="170.0" prefHeight="26.0" prefWidth="258.0" />
             <Label layoutX="12.0" layoutY="175.0" text="Criterion 4:" />
-            <Slider fx:id="sldCriterion4" layoutX="385.0" layoutY="175.0" min="1.0" prefHeight="16.0" prefWidth="203.0" />
+            <Slider fx:id="sldCriterion4" blockIncrement="1.0" layoutX="385.0" layoutY="175.0" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" prefHeight="16.0" prefWidth="203.0" />
             <TextField id="txtProjectCount" fx:id="txtCriterion5" layoutX="110.0" layoutY="200.0" prefHeight="26.0" prefWidth="258.0" />
             <Label layoutX="12.0" layoutY="205.0" text="Criterion 5:" />
-            <Slider fx:id="sldCriterion5" layoutX="385.0" layoutY="205.0" min="1.0" prefHeight="16.0" prefWidth="203.0" />
+            <Slider fx:id="sldCriterion5" blockIncrement="1.0" layoutX="385.0" layoutY="205.0" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" prefHeight="16.0" prefWidth="203.0" />
             <TextField id="txtProjectCount" fx:id="txtCriterion6" layoutX="110.0" layoutY="230.0" prefHeight="26.0" prefWidth="258.0" />
             <Label layoutX="12.0" layoutY="235.0" text="Criterion 6:" />
-            <Slider fx:id="sldCriterion6" layoutX="385.0" layoutY="235.0" min="1.0" prefHeight="16.0" prefWidth="203.0" />
+            <Slider fx:id="sldCriterion6" blockIncrement="1.0" layoutX="385.0" layoutY="235.0" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" prefHeight="16.0" prefWidth="203.0" />
             <TextField id="txtProjectCount" fx:id="txtCriterion7" layoutX="110.0" layoutY="260.0" prefHeight="26.0" prefWidth="258.0" />
             <Label layoutX="12.0" layoutY="265.0" text="Criterion 7:" />
-            <Slider fx:id="sldCriterion7" layoutX="385.0" layoutY="265.0" min="1.0" prefHeight="16.0" prefWidth="203.0" />
+            <Slider fx:id="sldCriterion7" blockIncrement="1.0" layoutX="385.0" layoutY="265.0" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" prefHeight="16.0" prefWidth="203.0" />
             <TextField id="txtProjectCount" fx:id="txtCriterion8" layoutX="110.0" layoutY="290.0" prefHeight="26.0" prefWidth="258.0" />
             <Label layoutX="12.0" layoutY="295.0" text="Criterion 8:" />
-            <Slider fx:id="sldCriterion8" layoutX="385.0" layoutY="295.0" min="1.0" prefHeight="16.0" prefWidth="203.0" />
+            <Slider fx:id="sldCriterion8" blockIncrement="1.0" layoutX="385.0" layoutY="295.0" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" prefHeight="16.0" prefWidth="203.0" />
             <TextField id="txtProjectCount" fx:id="txtCriterion9" layoutX="110.0" layoutY="320.0" prefHeight="26.0" prefWidth="258.0" />
             <Label layoutX="12.0" layoutY="325.0" text="Criterion 9:" />
-            <Slider fx:id="sldCriterion9" layoutX="385.0" layoutY="325.0" min="1.0" prefHeight="16.0" prefWidth="203.0" />
+            <Slider fx:id="sldCriterion9" blockIncrement="1.0" layoutX="385.0" layoutY="325.0" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" prefHeight="16.0" prefWidth="203.0" />
          </children>
       </AnchorPane>
    </children>

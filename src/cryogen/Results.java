@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import java.net.URL;
@@ -37,9 +39,9 @@ public class Results implements Initializable
 	//GUI Variables
 	@FXML private Button btnContinue;
 	@FXML private Button btnSave;
-	@FXML private TableView tblResults;
-	private TableColumn tcolProjectTitle;
-	private TableColumn tcolRankingScore;
+	@FXML private TableView<ProjectTableEntry> tblResults;
+	private TableColumn<ProjectTableEntry, String> tcolProjectTitle;
+	private TableColumn<ProjectTableEntry, String> tcolRankingScore;
 	private final ObservableList<ProjectTableEntry> projectTableEntry = FXCollections.observableArrayList();
 	@FXML private Label lblCI;
 
@@ -72,10 +74,10 @@ public class Results implements Initializable
 		setCurrentStage(currentStage);
 		setMemory(new SharedMemoryRepository(getCurrentStage()));
 		getCurrentStage().setOnCloseRequest(getMemory().confirmCloseEventHandler);//Set default close event
-		btnSave.setLayoutX(200);
-		btnContinue.setLayoutX(400);
-		btnContinue.setPrefWidth(80);
-		btnSave.setPrefWidth(80);
+		btnSave.setLayoutX(80);
+		btnContinue.setLayoutX(300);
+		btnContinue.setPrefWidth(150);
+		btnSave.setPrefWidth(150);
 		tblResults.setEditable(false);
 		tcolProjectTitle = new TableColumn("Project Title");
 		tcolProjectTitle.setMinWidth(350);
@@ -378,6 +380,9 @@ public class Results implements Initializable
 			for(int xxxxviii = 0; xxxxviii < SharedMemoryRepository.getProject_count(); xxxxviii++)
 				temp_sum[xxxxvi] += projectDivision[xxxxvi][xxxxviii];
 
+		for(int li = 0; li < SharedMemoryRepository.getCriterion_count(); li++)
+			temp_sum[li] /= SharedMemoryRepository.getProject_count();
+
 		double[] ci = new double[SharedMemoryRepository.getCriterion_count()];
 		for (int xxxxix = 0; xxxxix < SharedMemoryRepository.getCriterion_count(); xxxxix++)
 			ci[xxxxix] = (double)(temp_sum[xxxxix] - SharedMemoryRepository.getProject_count()) / (double)(SharedMemoryRepository.getProject_count() - 1);
@@ -385,6 +390,8 @@ public class Results implements Initializable
 		double[] cr = new double[SharedMemoryRepository.getCriterion_count()];
 		for(int l = 0; l < SharedMemoryRepository.getCriterion_count(); l++)
 		{
+			System.out.println("CI: " + ci[l]);
+
 			cr[l] = ci[l] / getPROJECT_RI();
 			if(cr[l] > 0.10)
 				ci_accept = false;
@@ -403,6 +410,58 @@ public class Results implements Initializable
 			lblCI.setTextFill(Paint.valueOf("#ea4335"));
 			lblCI.setText("Consistency ratio is unacceptable!");
 		}
+
+		tblResults.setRowFactory(row -> new TableRow<ProjectTableEntry>()
+		{
+			@Override
+			public void updateItem(ProjectTableEntry item, boolean empty)
+			{
+				super.updateItem(item, empty);
+				if (item == null || empty)
+				{
+					setStyle("");
+				}
+				else
+				{
+					//Now 'item' has all the info of the Person in this row
+					if (Double.parseDouble(item.getProjectRankingScore()) > 0.5)
+					{
+						//We apply now the changes in all the cells of the row
+						for(int i=0; i<getChildren().size();i++)
+						{
+							//((Labeled) getChildren().get(i)).setTextFill(Color.LIMEGREEN);
+							((Labeled) getChildren().get(i)).setStyle("-fx-background-color: lightgreen");
+						}
+					}
+					else if (Double.parseDouble(item.getProjectRankingScore()) < 0.3)
+					{
+						//We apply now the changes in all the cells of the row
+						for(int i=0; i<getChildren().size();i++)
+						{
+							//((Labeled) getChildren().get(i)).setTextFill(Color.LIMEGREEN);
+							((Labeled) getChildren().get(i)).setStyle("-fx-background-color: indianred");
+						}
+					}
+					else
+					{
+						if(getTableView().getSelectionModel().getSelectedItems().contains(item))
+						{
+							for(int i=0; i<getChildren().size();i++)
+							{
+								((Labeled) getChildren().get(i)).setTextFill(Color.WHITE);;
+							}
+						}
+						else
+						{
+							for(int i=0; i<getChildren().size();i++)
+							{
+								((Labeled) getChildren().get(i)).setTextFill(Color.BLACK);;
+							}
+						}
+					}
+				}
+			}
+		});
 	}
 
 	/**
