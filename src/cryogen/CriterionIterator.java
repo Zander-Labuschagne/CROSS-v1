@@ -106,6 +106,10 @@ public class CriterionIterator implements Initializable
 			sldCriterionValue.setId("sldCriterionValue" + String.format("%d", i));
 			sldCriterionValue.setDisable(false);
 			sldCriterionValue.setVisible(true);
+			sldCriterionValue.setMax(10);
+			sldCriterionValue.setBlockIncrement(1);
+			sldCriterionValue.setMajorTickUnit(2);
+			sldCriterionValue.setMinorTickCount(1);
 			vContent.getChildren().add(hContent);
 		}
 
