@@ -1,14 +1,15 @@
 package cryogen;
 
 import javafx.event.EventHandler;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.DialogPane;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.Optional;
 
 public class SharedMemoryRepository
@@ -21,8 +22,8 @@ public class SharedMemoryRepository
 	private static int[] criterion_values = new int[9];
 	private static int criterion_count;
 	private static int criterion_iterator = 0;
-	private static int project_criterion_values[][] = new int[9][getProject_count()];
-	private static String[] project_names = new String[getProject_count()];
+	private static int project_criterion_values[][];
+	private static String[] project_names;
 
 	public static void setLaF(String LaF)
 	{
@@ -94,6 +95,11 @@ public class SharedMemoryRepository
 		return criterion_iterator;
 	}
 
+	public static void init_project_names()
+	{
+		project_names = new String[getProject_count()];
+	}
+
 	public static void setProject_names(int index, String name)
 	{
 		project_names[index] = name;
@@ -102,6 +108,12 @@ public class SharedMemoryRepository
 	{
 		return project_names;
 	}
+
+	public static void init_project_criterion_values()
+	{
+		project_criterion_values = new int[getCriterion_count()][getProject_count()];
+	}
+
 	public static void setProject_criterion_values(int criterion_index, int project_index, int value)
 	{
 		project_criterion_values[criterion_index][project_index] = value;
@@ -181,16 +193,38 @@ public class SharedMemoryRepository
 	 */
 	public void handleException(Exception ex, String title, String header, String content)
 	{
-		if(ex != null)
-			ex.printStackTrace();
-		Alert error = new Alert(Alert.AlertType.ERROR, content);
+		Alert error = new Alert(Alert.AlertType.ERROR);
 		error.initModality(Modality.APPLICATION_MODAL);
 		error.initOwner(getCurrentStage());
+		error.setContentText(content);
 		error.setTitle(title);
 		error.setHeaderText(header);
+
+// Create expandable Exception.
+		StringWriter sw            = new StringWriter();
+		PrintWriter  pw            = new PrintWriter(sw);;
+		String       exceptionText;
+		ex.printStackTrace(pw);
+		exceptionText = sw.toString();
+		Label        label         = new Label("The exception stacktrace was:");
+		TextArea     textArea      = new TextArea(exceptionText);
+		textArea.setEditable(false);
+		textArea.setWrapText(true);
+		textArea.setMaxWidth(Double.MAX_VALUE);
+		textArea.setMaxHeight(Double.MAX_VALUE);
+		GridPane.setVgrow(textArea, Priority.ALWAYS);
+		GridPane.setHgrow(textArea, Priority.ALWAYS);
+		GridPane expContent = new GridPane();
+		expContent.setMaxWidth(Double.MAX_VALUE);
+		expContent.add(label, 0, 0);
+		expContent.add(textArea, 0, 1);
+// Set expandable Exception into the dialog pane.
 		DialogPane dialogPane = error.getDialogPane();
 		dialogPane.getStylesheets().add(getClass().getResource(getLaF()).toExternalForm());
 		dialogPane.getStyleClass().add("dlgDefault");
+		dialogPane.setExpandableContent(expContent);
+		dialogPane.setPrefWidth(640);
+		dialogPane.setPrefHeight(240);
 		error.showAndWait();
 	}
 

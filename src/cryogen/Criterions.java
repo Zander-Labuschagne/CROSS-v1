@@ -14,6 +14,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
+
+import java.awt.font.ShapeGraphicAttribute;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -126,14 +128,17 @@ public class Criterions implements Initializable
 				if (node instanceof TextField && !((TextField)node).getText().equals(""))
 					SharedMemoryRepository.setCriterion_names(cN++, ((TextField)node).getText());
 				else if (node instanceof Slider)
+				{
 					SharedMemoryRepository.setCriterion_values(cV++, ((int) ((Slider) node).getValue()));
+				}
 			}
 			SharedMemoryRepository.setCriterion_count(cN);
+			SharedMemoryRepository.init_project_criterion_values();
 
 			FXMLLoader loader       = new FXMLLoader(getClass().getResource("CriterionIterator.fxml"));
 			Stage      cross_window = new Stage(StageStyle.DECORATED);//
 			cross_window.setResizable(false);
-			cross_window.setTitle("CROSS 1.0");
+			cross_window.setTitle("CROSS 1.0 - " + SharedMemoryRepository.getCriterion_names()[SharedMemoryRepository.getCriterion_iterator()]);
 			cross_window.setScene(new Scene((Pane) loader.load()));
 			//CriterionIterator criterions = new CriterionIterator(laf, 0, projectCount, criterionCount, criterionNames, criterionValues);
 
@@ -142,6 +147,11 @@ public class Criterions implements Initializable
 
 			cross_window.show();
 			((Node) (event.getSource())).getScene().getWindow().hide();//Hide Previous Window
+		}
+		catch (NumberFormatException nfex)
+		{
+			nfex.printStackTrace();
+			getMemory().handleException(nfex);
 		}
 		catch(Exception ex)
 		{

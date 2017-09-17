@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="Midna.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.Results">
+   <children>
+      <AnchorPane fx:id="anchorPane" prefHeight="401.0" prefWidth="600.0">
+         <children>
+            <Button id="btnContinue" fx:id="btnContinue" layoutX="357.0" layoutY="361.0" mnemonicParsing="false" onAction="#btnContinue_Clicked" prefHeight="26.0" prefWidth="142.0" text="Continue" />
+            <Label layoutX="262.0" layoutY="14.0" text="Results">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Button fx:id="btnSave" layoutX="85.0" layoutY="361.0" mnemonicParsing="false" onAction="#btnSave_Clicked" prefHeight="26.0" prefWidth="142.0" text="Save to File" />
+            <Label fx:id="lblCI" layoutX="15.0" layoutY="46.0" text="Consistency index for the decision criteria: " />
+            <TableView fx:id="tblResults" layoutX="14.0" layoutY="71.0" prefHeight="277.0" prefWidth="570.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

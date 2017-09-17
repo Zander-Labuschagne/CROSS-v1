@@ -96,9 +96,10 @@ public class CROSSStart implements Initializable
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Criterions.fxml"));
 			Stage cross_window  = new Stage(StageStyle.DECORATED);//
 			cross_window.setResizable(false);
-			cross_window.setTitle("CROSS 1.0");
+			cross_window.setTitle("CROSS 1.0 - Criterions");
 			cross_window.setScene(new Scene((Pane) loader.load()));
 			SharedMemoryRepository.setProject_count(Integer.parseInt(txtProjectCount.getText()));
+			SharedMemoryRepository.init_project_names();
 			Criterions criterions = new Criterions();
 			criterions.initialize(cross_window);
 			cross_window.show();

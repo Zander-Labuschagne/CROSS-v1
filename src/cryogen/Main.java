@@ -23,7 +23,7 @@ public class Main extends Application
     public void start(Stage startStage) throws Exception
     {
     	//Initialize...\\TODO: finish
-    	SharedMemoryRepository.setExitingStatus(false);
+    	SharedMemoryRepository.setExiting_status(false);
 	    SharedMemoryRepository.setLaF("Midna.css");
 
 	    startStage.initStyle(StageStyle.DECORATED);
