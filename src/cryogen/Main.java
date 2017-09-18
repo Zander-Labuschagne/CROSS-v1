@@ -36,7 +36,7 @@ public class Main extends Application
 		    loader = new FXMLLoader(getClass().getResource("CROSSStart.fxml"));
 	    startStage.setResizable(false);
 	    startStage.setScene(createScene(loader.load()));
-	    startStage.getScene().getStylesheets().add(getClass().getResource("Midna.css").toExternalForm());
+//	    startStage.getScene().getStylesheets().add(getClass().getResource("Midna.css").toExternalForm());
 	    CROSSStart start = loader.getController();
 	    start.initialize(startStage);
 	    startStage.show();

@@ -17,7 +17,10 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
+
+import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
@@ -97,6 +100,8 @@ public class CriterionIterator implements Initializable
 			txtProjectTitle.setEditable(true);
 			txtProjectTitle.setVisible(true);
 			txtProjectTitle.setDisable(false);
+			txtProjectTitle.getStyleClass().add("txtDefault");
+
 
 			Slider sldCriterionValue = new Slider();
 			hContent.getChildren().add(sldCriterionValue);
@@ -195,6 +200,7 @@ public class CriterionIterator implements Initializable
 				cross_window.setResizable(false);
 				cross_window.setTitle("CROSS 1.0 - " + SharedMemoryRepository.getCriterion_names()[SharedMemoryRepository.getCriterion_iterator()]);
 				cross_window.setScene(new Scene((Pane) loader.load()));
+//				cross_window.getScene().getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
 				CriterionIterator criterions = loader.<CriterionIterator>getController();
 				criterions.initialize(cross_window);
 				cross_window.show();
@@ -213,6 +219,7 @@ public class CriterionIterator implements Initializable
 				cross_results_window.setTitle("CROSS 1.0 - Results");
 				cross_results_window.setScene(new Scene((Pane) loader.load()));
 				Results result = loader.<Results>getController();
+//				cross_results_window.getScene().getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
 				result.initialize(cross_results_window);
 				cross_results_window.show();
 				((Node) (event.getSource())).getScene().getWindow().hide();//Hide Previous Window
@@ -249,10 +256,51 @@ public class CriterionIterator implements Initializable
 			projectTitleNotification.setTitle("Initialize Project Titles");
 			projectTitleNotification.setHeaderText("Projects need titles");
 			DialogPane dialogPane = projectTitleNotification.getDialogPane();
-			dialogPane.getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
+//			dialogPane.getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
 			dialogPane.getStyleClass().add("dlgDefault");
 			projectTitleNotification.showAndWait();
 		}
 	};
+
+	@FXML
+	protected void mnuFile_Preferences_Clicked(ActionEvent event)
+	{
+		try
+		{
+			Stage preferencesWindow = new Stage(StageStyle.DECORATED);
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Preferences.fxml"));
+			preferencesWindow.setResizable(false);
+			preferencesWindow.setTitle("CROSS Preferences");
+			preferencesWindow.setScene(new javafx.scene.Scene((javafx.scene.layout.Pane) loader.load(), javafx.scene.paint.Color.TRANSPARENT));
+//			preferencesWindow.getScene().getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
+			Preferences preferences = loader.<Preferences>getController();
+			preferences.initialize(SharedMemoryRepository.getStage());
+			preferencesWindow.showAndWait();
+		}
+		catch (IOException ex)
+		{
+			memory.handleException(ex);
+		}
+		catch (Exception ex)
+		{
+			memory.handleException(ex);
+		}
+	}
+
+	@FXML
+	protected void mnuFile_Exit_Clicked(ActionEvent event)
+	{
+		Alert closeConfirmation = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to exit?");
+		Button exitButton = (Button) closeConfirmation.getDialogPane().lookupButton(ButtonType.OK);
+		exitButton.setText("Exit");
+		closeConfirmation.setHeaderText("Confirm Exit");
+		closeConfirmation.initModality(Modality.APPLICATION_MODAL);
+		closeConfirmation.initOwner(getCurrentStage());
+		DialogPane dialogPane = closeConfirmation.getDialogPane();
+//		dialogPane.getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
+		dialogPane.getStyleClass().add("dlgDefault");
+		Optional<ButtonType> closeResponse = closeConfirmation.showAndWait();
+		if (ButtonType.OK.equals(closeResponse.get()))
+			System.exit(0);	}
 }
 

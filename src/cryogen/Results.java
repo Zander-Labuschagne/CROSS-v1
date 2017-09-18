@@ -4,14 +4,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
@@ -471,9 +477,44 @@ public class Results implements Initializable
 	}
 
 	@FXML
-	protected void btnSave_Clicked(ActionEvent event)
+	protected void mnuFile_Preferences_Clicked(ActionEvent event)
 	{
-		//TODO:Save to file
+		try
+		{
+			Stage      preferencesWindow = new Stage(StageStyle.DECORATED);
+			FXMLLoader loader            = new FXMLLoader(getClass().getResource("Preferences.fxml"));
+			preferencesWindow.setResizable(false);
+			preferencesWindow.setTitle("CROSS Preferences");
+			preferencesWindow.setScene(new javafx.scene.Scene((javafx.scene.layout.Pane) loader.load(), javafx.scene.paint.Color.TRANSPARENT));
+//			preferencesWindow.getScene().getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
+			Preferences preferences = loader.<Preferences>getController();
+			preferences.initialize(SharedMemoryRepository.getStage());
+			preferencesWindow.showAndWait();
+		}
+		catch (IOException ex)
+		{
+			memory.handleException(ex);
+		}
+		catch (Exception ex)
+		{
+			memory.handleException(ex);
+		}
 	}
+
+	@FXML
+	protected void mnuFile_Exit_Clicked(ActionEvent event)
+	{
+		Alert closeConfirmation = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to exit?");
+		Button exitButton = (Button) closeConfirmation.getDialogPane().lookupButton(ButtonType.OK);
+		exitButton.setText("Exit");
+		closeConfirmation.setHeaderText("Confirm Exit");
+		closeConfirmation.initModality(Modality.APPLICATION_MODAL);
+		closeConfirmation.initOwner(getCurrentStage());
+		DialogPane dialogPane = closeConfirmation.getDialogPane();
+//		dialogPane.getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
+		dialogPane.getStyleClass().add("dlgDefault");
+		Optional<ButtonType> closeResponse = closeConfirmation.showAndWait();
+		if (ButtonType.OK.equals(closeResponse.get()))
+			System.exit(0);	}
 }
 

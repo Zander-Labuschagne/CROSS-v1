@@ -2,29 +2,49 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.CROSSStart">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" styleClass="vbox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.CROSSStart">
    <children>
-      <AnchorPane prefHeight="401.0" prefWidth="600.0">
+      <MenuBar styleClass="menu-bar" VBox.vgrow="NEVER">
+         <menus>
+            <Menu mnemonicParsing="false" styleClass="menu" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#mnuFile_Preferences_Clicked" text="Preferences…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuFile_Exit_Clicked" text="Exit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About CROSS" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="401.0" prefWidth="600.0" styleClass="vbox">
          <children>
-            <Button id="btnContinue" layoutX="229.0" layoutY="352.0" mnemonicParsing="false" onAction="#btnContinue_Clicked" prefHeight="26.0" prefWidth="142.0" text="Continue" />
+            <Button id="btnContinue" layoutX="229.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnContinue_Clicked" prefHeight="26.0" prefWidth="142.0" text="Continue" />
             <TextField id="txtProjectCount" fx:id="txtProjectCount" layoutX="339.0" layoutY="271.0" prefHeight="26.0" prefWidth="87.0" styleClass="txtDefault" />
             <Label layoutX="14.0" layoutY="276.0" text="Please Enter the Amount of Projects to Evaluate:" />
-            <Text layoutX="194.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CROSS">
+            <Label layoutX="194.0" layoutY="40.0" styleClass="label"  text="CROSS">
                <font>
                   <Font name="System Bold Italic" size="56.0" />
                </font>
-            </Text>
-            <Text layoutX="68.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consensus-Ranking Organizational-Support System">
+            </Label>
+            <Label layoutX="68.0" layoutY="111.0" styleClass="label" text="Consensus-Ranking Organizational-Support System">
                <font>
                   <Font size="18.0" />
                </font>
-            </Text>
+            </Label>
          </children>
       </AnchorPane>
    </children>

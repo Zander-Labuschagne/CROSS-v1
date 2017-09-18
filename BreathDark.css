@@ -14,17 +14,22 @@
 
 .vbox
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
+}
+
+.label
+{
+    -fx-text-fill: rgb(255, 255, 255);
 }
 
 .txtDefault,
 .txtDefault .content
 {
-    -fx-background-color: rgb(49, 52, 63);
-    -fx-text-fill: rgb(183, 186, 195);
-    -fx-border-color: rgb(183, 186, 195);
+    -fx-background-color: rgb(62, 71, 78);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-border-color: rgb(255, 255, 255);
     -fx-font-family: "Noto Sans";
-    -fx-highlight-fill: rgb(104, 112, 136);
+    -fx-highlight-fill: rgb(18, 77, 67);
     -fx-background-insets: 0;
     -fx-text-box-border: transparent;
     -fx-focus-color: transparent;
@@ -33,30 +38,30 @@
 }
 .txtDefault:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
 }
 .txtDefault:focused
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
 }
 /* The main scrollbar CSS class of TextArea */
 .txtDefault .scroll-bar:horizontal,
 .txtDefault  .scroll-bar:vertical
 {
-    -fx-background-color:rgb(38, 40, 49);
+    -fx-background-color:rgb(62, 71, 78);
 }
 /* The increment and decrement button CSS class of scrollbar */
 .txtDefault .increment-button,
 .txtDefault .decrement-button
 {
     -fx-background-color:transparent;
-    -fx-border-color:rgb(49, 52, 63);
+    -fx-border-color:rgb(62, 71, 78);
 }
 /* The main scrollbar **track** CSS class  */
 .txtDefault .scroll-bar:horizontal .track,
 .txtDefault .scroll-bar:vertical .track
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(62, 71, 78);
     -fx-border-color:rgb(49, 52, 63);
     /*-fx-border-color:#000;*/
     -fx-background-radius: 0em;
@@ -66,7 +71,7 @@
 .txtDefault .scroll-bar:vertical .thumb
 {
     /*-fx-background-color:derive(black,50%);*/
-    -fx-background-color:rgb(104, 112, 136);
+    -fx-background-color:rgb(18, 77, 67);
     -fx-background-insets: 0, 0, 0;
     -fx-background-radius: 0em;
 }
@@ -85,18 +90,23 @@
 .txtDefault .scroll-bar .thumb:hover,
 .txtDefault .scroll-bar .thumb:pressed
 {
-    -fx-background-color: rgb(183, 186, 195);
+    -fx-background-color: rgb(255, 255, 255);
 }
 .txtDefault .increment-button:hover,
 .txtDefault .decrement-button:hover
 {
-    -fx-background-color:rgba(0, 93, 255, 0.4);
+    -fx-background-color:rgba(26, 188, 156, 0.4);
+}
+
+.slider
+{
+    -fx-control-inner-background:rgb(62, 71, 78);
 }
 
 .btnEncryptMessage
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-border-color: rgb(15, 15, 15);
     -fx-border-width: 0.75;
     -fx-background-image: url("/icons/lock.png");
@@ -107,18 +117,18 @@
 
 .btnEncryptMessage:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
-    -fx-background-color: rgba(0,93,255,0.1);
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 50, 0.8), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(41,47,52,0.1);
 }
 .btnEncryptMessage:focused
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 50, 0.8), 5, 0.65, 0, 0);
 }
 
 .btnEncryptFiles
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-border-color: rgb(15, 15, 15);
     -fx-border-width: 0.75;
     -fx-background-image: url("/icons/lock.png");
@@ -128,18 +138,18 @@
 }
 .btnEncryptFiles:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
     -fx-background-color: rgba(0,93,255,0.1);
 }
 .btnEncryptFiles:focused
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
 }
 
 .btnDecryptMessage
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-border-color: rgb(15, 15, 15);
     -fx-border-width: 0.75;
     -fx-background-image: url("/icons/unlock.png");
@@ -149,18 +159,18 @@
 }
 .btnDecryptMessage:hover
 {
-   -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 1), 5, 0.65, 0, 0);
-   -fx-background-color: rgba(0,93,255,0.1);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
 }
 .btnDecryptMessage:focused
 {
-   -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
 }
 
 .btnDecryptFiles
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-border-color: rgb(15, 15, 15);
     -fx-border-width: 0.75;
     -fx-background-image: url("/icons/unlock.png");
@@ -170,27 +180,27 @@
 }
 .btnDecryptFiles:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 1), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
     -fx-background-color: rgba(0,93,255,0.1);
 }
 .btnDecryptFiles:focused
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
 }
 
 .pneDefault
 {
     -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .pneDefault:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
 }
 .pneDefault > .title
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
     -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
@@ -199,22 +209,22 @@
 }
 .pneDefault > .title > .arrow-button
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
     -fx-background-insets: 0;
     -fx-background-radius: 0;
     -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
 }
 .pneDefault > .title > .arrow-button .arrow
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
     -fx-background-insets: 1 0 -1 0, 0;
     -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
     -fx-shape: "M 0 0 h 7 l -3.5 4 z";
 }
 .pneDefault > *.content
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 0 1 1 1;
     -fx-padding: 0.167em;
     -fx-border-color: rgb(15, 15, 15);
@@ -222,17 +232,17 @@
 .pneDefaultError
 {
     -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
 }
 .pneDefaultError:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
 }
 .pneDefaultError > .title
 {
     -fx-background-color: rgba(255, 0, 0, 0.1);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
     -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
@@ -257,7 +267,7 @@
 .pneDefaultError > *.content
 {
     -fx-background-color: rgba(255, 0, 0, 0.1);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 0 1 1 1;
     -fx-padding: 0.167em;
     -fx-border-color: rgba(255, 0, 0, 0.6);
@@ -266,28 +276,28 @@
 
 .radDefault
 {
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .radDefault .radio
 {
-    -fx-background-color: rgb(183, 186, 195);
+    -fx-background-color: rgb(128, 128, 128);
 }
 .radDefault .dot
 {
-    -fx-mark-highlight-color: rgb(38, 40, 49);
-    -fx-mark-color: rgb(38, 40, 49);
+    -fx-mark-highlight-color: rgb(41, 180, 100);
+    -fx-mark-color: rgb(41, 47, 52);
 }
 
 .menu-bar
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 
 .menu
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .menu:hover
 {
@@ -296,52 +306,52 @@
 .menu-bar .label
 {
     -fx-background-color: transparent;
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 
 .menu-item
 {
-    -fx-background-color:rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color:rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .menu-item:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 220, 120, 0.6), 5, 0.65, 0, 0);
     -fx-background-color: rgba(0,93,255,0.1);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 
 .menu .label
 {
     -fx-background-color: transparent;
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 
 .menu-button
 {
     -fx-background-color: transparent;
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 
 .context-menu
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 
 .pneFilePane
 {
     -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .pneFilePane:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
 }
 .pneFilePane > .title
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
     -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
@@ -357,15 +367,15 @@
 }
 .pneFilePane > .title > .arrow-button .arrow
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
     -fx-background-insets: 1 0 -1 0, 0;
     -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
     -fx-shape: "M 0 0 h 7 l -3.5 4 z";
 }
 .pneFilePane > *.content
 {
-    -fx-background-color: rgb(49, 52, 63);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(62, 71, 78);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 0 1 1 1;
     -fx-padding: 0.167em;
     -fx-border-color: rgb(15, 15, 15);
@@ -374,16 +384,16 @@
 .pneFilePaneDropped
 {
     -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .pneFilePaneDropped:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
 }
 .pneFilePaneDropped > .title
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
     -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
@@ -391,22 +401,22 @@
 }
 .pneFilePaneDropped > .title > .arrow-button
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
     -fx-background-insets: 0;
     -fx-background-radius: 0;
     -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
 }
 .pneFilePaneDropped > .title > .arrow-button .arrow
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
     -fx-background-insets: 1 0 -1 0, 0;
     -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
     -fx-shape: "M 0 0 h 7 l -3.5 4 z";
 }
 .pneFilePaneDropped > *.content
 {
-    -fx-background-color: rgb(49, 52, 63);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(62, 71, 78);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 0 1 1 1;
     -fx-padding: 0.167em;
     -fx-background-image: url("/icons/files.png");
@@ -418,17 +428,17 @@
 .pneFilePaneDrag
 {
     -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
-    -fx-text-fill: rgb(183, 186, 195);
-    -fx-border-color: rgb(38, 40, 49);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-border-color: rgb(41, 47, 52);
 }
 .pneFilePaneDrag:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
 }
 .pneFilePaneDrag > .title
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
     -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
@@ -436,22 +446,22 @@
 }
 .pneFilePaneDrag > .title > .arrow-button
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
     -fx-background-insets: 0;
     -fx-background-radius: 0;
     -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
 }
 .pneFilePaneDrag > .title > .arrow-button .arrow
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
     -fx-background-insets: 1 0 -1 0, 0;
     -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
     -fx-shape: "M 0 0 h 7 l -3.5 4 z";
 }
 .pneFilePaneDrag > *.content
 {
-    -fx-background-color: rgba(0, 93, 255, 0.4);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgba(26, 188, 156, 0.4);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 0 1 1 1;
     -fx-padding: 0.167em;
     /*-fx-background-image: url("/icons/down8.png");
@@ -465,7 +475,7 @@
 .pneFilePaneError
 {
     -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-border-color: rgba(255, 0, 0, 0.6);
     -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
 }
@@ -477,7 +487,7 @@
 .pneFilePaneError > .title
 {
     -fx-background-color: rgba(255, 0, 0, 0.1);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
     -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
@@ -486,14 +496,14 @@
 }
 .pneFilePaneError > .title > .arrow-button
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
     -fx-background-insets: 0;
     -fx-background-radius: 0;
     -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
 }
 .pneFilePaneError > .title > .arrow-button .arrow
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
     -fx-background-insets: 1 0 -1 0, 0;
     -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
     -fx-shape: "M 0 0 h 7 l -3.5 4 z";
@@ -501,7 +511,7 @@
 .pneFilePaneError > *.content
 {
     -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-background-insets: 0, 0 1 1 1;
     -fx-padding: 0.167em;
     /*-fx-background-image: url("/icons/down8.png");*/
@@ -519,9 +529,9 @@
  ******************************************************************************/
 .dlgDefault
 {
-    -fx-background-color: rgb(38, 40, 49);
+    -fx-background-color: rgb(41, 47, 52);
     -fx-padding: 0;
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .dlgDefault > .expandable-content
 {
@@ -533,21 +543,21 @@
 }
 .dlgDefault > .button
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
-    -fx-border-color: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-border-color: rgb(255, 255, 255);
     -fx-border-width: 0.3;
 }
 .dlgDefault > .content.label
 {
     -fx-alignment: top-left;
     -fx-padding: 1.333em 0.833em 0 0.833em; /* 16px 10px 0px 10px */
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .dlgDefault > .content
 {
     -fx-padding: 0.833em; /* 10 */
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .dlgDefault:no-header .graphic-container
 {
@@ -557,15 +567,15 @@
 {
     /*-fx-padding: 0.833em 1.166em 0.833em 1.166em; *//* 10px 14px 10px 14px */
     -fx-padding: 0.833em; /* 10px */
-    -fx-background-color: -fx-box-border, rgb(38, 40, 49);
+    -fx-background-color: -fx-box-border, rgb(41, 47, 52);
     -fx-background-insets: 0, 0 0 1 0;
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .dlgDefault:header .header-panel .label
 {
     -fx-font-size: 1.167em; /* 14px */
     -fx-wrap-text: true;
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .dlgDefault:header .header-panel .graphic-container
 {
@@ -577,9 +587,9 @@
     -fx-alignment: baseline-left;
     -fx-focus-traversable: false;
     -fx-padding: 0.416em; /* 5px */
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
-    -fx-border-color: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-border-color: rgb(255, 255, 255);
     -fx-border-width: 0.3;
 }
 
@@ -611,12 +621,12 @@
     /*.check-box > .box,*/
     /*.menu-button,
     .choice-box,
-    .color-picker.split-button > .color-picker-label,
+    .color-picker.split-button > .color-picker-label*/,
     .combo-box-base,
-    .combo-box-base:editable > .arrow-button*/
+    .combo-box-base:editable > .arrow-button
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-border-color: rgb(15, 15, 15);
     -fx-border-width: 0.75;
     /*-fx-background-insets: 0 0 -1 0, 0, 1, 2;
@@ -649,10 +659,10 @@
 .spinner .decrement-arrow-button:hover,
 .tab-pane > .tab-header-area > .control-buttons-tab > .container > .tab-down-button:hover
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 220, 120, 0.6), 5, 0.65, 0, 0);
     -fx-background-color: rgba(0,93,255,0.1);
 }
-.button:armed/*,
+.button:armed
 .toggle-button:armed,
 .radio-button:armed > .radio,
 .check-box:armed .box,
@@ -669,7 +679,7 @@
 .combo-box-base:editable:showing > .arrow-button,
 .spinner .increment-arrow-button:pressed,
 .spinner .decrement-arrow-button:pressed,
-.tab-pane > .tab-header-area > .control-buttons-tab > .container > .tab-down-button:pressed*/
+.tab-pane > .tab-header-area > .control-buttons-tab > .container > .tab-down-button:pressed
 {
     -fx-color: -fx-pressed-base;
 }
@@ -680,10 +690,10 @@
 .menu-button:focused,
 .choice-box:focused,
 .color-picker.split-button:focused > .color-picker-label,
-.combo-box-base:focused,
-.slider:focused .thumb*/
+.combo-box-base:focused,*/
+.slider:focused .thumb
 {
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(26, 220, 120, 0.6), 5, 0.65, 0, 0);
     -fx-background-insets: -0.2, 1, 2, -1.4, 2.6;
     -fx-background-radius: 3, 2, 1, 4, 1;
 }
@@ -735,16 +745,16 @@
 
 .anchorPaneDefault
 {
-    -fx-background-color: rgb(38, 40, 49);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-border-color: rgb(15, 15, 15);
 }
 .progress-barDefault
 {
-    -fx-progress-color: rgba(0, 93, 255, 0.4);
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-progress-color: rgba(26, 188, 156, 0.4);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
     -fx-background-color: rgba(0,93,255,0.1);
-    -fx-text-fill: rgb(183, 186, 195);
+    -fx-text-fill: rgb(255, 255, 255);
 }
 .progress-barDefault > .track
 {
@@ -753,7 +763,139 @@
 }
 .progress-barDefault > .bar
 {
-    -fx-background-color: rgba(0, 93, 255, 0.4);
-    -fx-progress-color: rgba(0, 93, 255, 0.4);
-    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 0.4), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(26, 188, 156, 0.4);
+    -fx-progress-color: rgba(26, 188, 156, 0.4);
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
+}
+
+.combo-box-base .list-view .list-cell:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+    -fx-text-fill: rgb(255, 255, 255);
+
+}
+
+.combo-box-base .list-cell:selected
+{
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
+    -fx-background-insets: -0.2, 1, 2, -1.4, 2.6;
+    -fx-background-radius: 3, 2, 1, 4, 1;
+    -fx-text-fill: rgb(255, 255, 255);
+}
+
+.combo-box-base .list-cell
+{
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-border-color: rgb(15, 15, 15);
+}
+
+.combo-box-base .list-view
+{
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-border-color: rgb(15, 15, 15);
+}
+
+.combo-box-base .list-cell:filled:selected:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+    -fx-background-insets: -0.2, 1, 2, -1.4, 2.6;
+    -fx-background-radius: 3, 2, 1, 4, 1;
+    -fx-text-fill: rgb(255, 255, 255);
+
+}
+
+.combo-box-base:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+    -fx-text-fill: rgb(255, 255, 255);
+
+}
+
+.combo-box-base:showing
+{
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
+    -fx-text-fill: rgb(255, 255, 255);
+}
+
+.table-view
+{
+    -fx-background-color: transparent;
+}
+
+.table-view:focused
+{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background
+{
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-border-color: rgb(15, 15, 15);
+    -fx-border-width: 0.75;}
+
+.table-view .column-header-background .label
+{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header
+{
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell
+{
+    -fx-text-fill: rgb(255, 255, 255);
+}
+
+.table-row-cell
+{
+    -fx-background-color: rgb(62, 71, 78);
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: rgb(82, 91, 98);
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:selected
+{
+    -fx-effect: dropshadow(gaussian, rgba(26, 180, 140, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background
+{
+    -fx-background-color: transparent;
+}
+
+.table-view .filler
+{
+    -fx-background-color: rgb(41, 47, 52);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-border-color: rgb(15, 15, 15);
+    -fx-border-width: 0.75;
+}
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button
+{
+    -fx-opacity: 0;
 }

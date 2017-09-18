@@ -16,6 +16,7 @@ public class SharedMemoryRepository
 {
 	private static String laf;
 	private static boolean exiting_status;
+	private static Stage stage;
 
 	private static int project_count;
 	private static String[] criterion_names = new String[9];
@@ -124,6 +125,15 @@ public class SharedMemoryRepository
 		return project_criterion_values;
 	}
 
+	public static void setStage(Stage currentStage)
+	{
+		stage = currentStage;
+	}
+
+	public static Stage getStage()
+	{
+		return stage;
+	}
 
 
 
@@ -220,7 +230,7 @@ public class SharedMemoryRepository
 		expContent.add(textArea, 0, 1);
 // Set expandable Exception into the dialog pane.
 		DialogPane dialogPane = error.getDialogPane();
-		dialogPane.getStylesheets().add(getClass().getResource(getLaF()).toExternalForm());
+//		dialogPane.getStylesheets().add(getClass().getResource(getLaF()).toExternalForm());
 		dialogPane.getStyleClass().add("dlgDefault");
 		dialogPane.setExpandableContent(expContent);
 		dialogPane.setPrefWidth(640);

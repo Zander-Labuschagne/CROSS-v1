@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.CriterionIterator">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="vbox" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.CriterionIterator">
    <children>
-      <AnchorPane fx:id="anchorPane" prefHeight="401.0" prefWidth="600.0">
+      <AnchorPane fx:id="anchorPane" prefHeight="401.0" prefWidth="600.0" styleClass="vbox">
          <children>
-            <Button id="btnContinue" fx:id="btnContinue" layoutX="229.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnContinue_Clicked" prefHeight="26.0" prefWidth="142.0" text="Continue" />
+            <Button id="btnContinue" fx:id="btnContinue" layoutX="229.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnContinue_Clicked" prefHeight="26.0" prefWidth="142.0" styleClass="button" text="Continue" />
             <Label fx:id="lblCaption" layoutX="14.0" layoutY="14.0" text="Please specify the criterion rating for each project">
                <font>
                   <Font name="System Bold" size="16.0" />
@@ -24,9 +24,9 @@
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
-            <ScrollPane fx:id="scrollPane" layoutX="14.0" layoutY="81.0" pannable="true" prefHeight="273.0" prefWidth="575.0">
+            <ScrollPane fx:id="scrollPane" layoutX="14.0" layoutY="81.0" pannable="true" prefHeight="273.0" prefWidth="575.0" styleClass="vbox">
                <content>
-                  <VBox fx:id="vContent" prefHeight="279.0" prefWidth="557.0" />
+                  <VBox fx:id="vContent" prefHeight="279.0" prefWidth="557.0" styleClass="vbox" />
                </content>
             </ScrollPane>
          </children>
