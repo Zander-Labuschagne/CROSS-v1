@@ -85,6 +85,15 @@ public class Criterions implements Initializable
 		setCurrentStage(currentStage);
 		setMemory(new SharedMemoryRepository(getCurrentStage()));
 		getCurrentStage().setOnCloseRequest(getMemory().confirmCloseEventHandler);//Set default close event
+		for(Node node : anchorPane.getChildren())
+			if(node instanceof Slider)
+			{
+				((Slider) node).setMin(1);
+				((Slider) node).setMax(10);
+				((Slider)node).setBlockIncrement(1);
+				((Slider)node).setMajorTickUnit(2);
+				((Slider)node).setMinorTickCount(1);
+			}
 		//txtProjectCount.requestFocus();
 		//mnuLaF_BreathDark_Clicked(new ActionEvent());
 	}
@@ -123,15 +132,12 @@ public class Criterions implements Initializable
 
 			//Traverse through all components inside/on anchorPane
 			for (Node node : anchorPane.getChildren())
-			{
 				//System.out.println("Id: " + node.getId());
 				if (node instanceof TextField && !((TextField)node).getText().equals(""))
 					SharedMemoryRepository.setCriterion_names(cN++, ((TextField)node).getText());
 				else if (node instanceof Slider)
-				{
 					SharedMemoryRepository.setCriterion_values(cV++, ((int) ((Slider) node).getValue()));
-				}
-			}
+
 			SharedMemoryRepository.setCriterion_count(cN);
 			SharedMemoryRepository.init_project_criterion_values();
 

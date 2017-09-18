@@ -38,7 +38,6 @@ public class Results implements Initializable
 	private final double PROJECT_RI = (((2.7699 * SharedMemoryRepository.getProject_count()) - 4.3513) - SharedMemoryRepository.getProject_count()) / (SharedMemoryRepository.getProject_count() - 1);
 	//GUI Variables
 	@FXML private Button btnContinue;
-	@FXML private Button btnSave;
 	@FXML private TableView<ProjectTableEntry> tblResults;
 	private TableColumn<ProjectTableEntry, String> tcolProjectTitle;
 	private TableColumn<ProjectTableEntry, String> tcolRankingScore;
@@ -74,10 +73,8 @@ public class Results implements Initializable
 		setCurrentStage(currentStage);
 		setMemory(new SharedMemoryRepository(getCurrentStage()));
 		getCurrentStage().setOnCloseRequest(getMemory().confirmCloseEventHandler);//Set default close event
-		btnSave.setLayoutX(80);
 		btnContinue.setLayoutX(300);
 		btnContinue.setPrefWidth(150);
-		btnSave.setPrefWidth(150);
 		tblResults.setEditable(false);
 		tcolProjectTitle = new TableColumn("Project Title");
 		tcolProjectTitle.setMinWidth(350);
