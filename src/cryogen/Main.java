@@ -11,6 +11,7 @@ package cryogen;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -27,7 +28,7 @@ public class Main extends Application
 	    SharedMemoryRepository.setLaF("Midna.css");
 
 	    startStage.initStyle(StageStyle.DECORATED);
-	    //startStage.getIcons().add(new Image(getClass().getResourceAsStream("/icons/cryogen/icon.png")));
+	    startStage.getIcons().add(new Image(getClass().getResourceAsStream("/icons/cryogen/cryogen.png")));
 	    startStage.setTitle("CROSS 1.0");
 	    FXMLLoader loader;
 	    /*if(System.getProperty("os.name").startsWith("Windows"))

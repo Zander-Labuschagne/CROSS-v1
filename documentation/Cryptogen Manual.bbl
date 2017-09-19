@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+
+\bibitem{bellovin2011frank}
+Steven~M Bellovin.
+\newblock Frank miller: Inventor of the one-time pad.
+\newblock {\em Cryptologia}, 35(3):203--222, 2011.
+
+\bibitem{bruen2011cryptography}
+Aiden~A Bruen and Mario~A Forcinito.
+\newblock {\em Cryptography, information theory, and error-correction: a
+  handbook for the 21st century}, volume~68.
+\newblock John Wiley \& Sons, 2011.
+
+\bibitem{pfleeger2002security}
+Charles~P Pfleeger and Shari~Lawrence Pfleeger.
+\newblock {\em Security in computing}.
+\newblock Prentice Hall Professional Technical Reference, 2002.
+
+\bibitem{vernam1919secret}
+Gilbert~S Vernam.
+\newblock Secret signaling system, July~22 1919.
+\newblock US Patent 1,310,719.
+
+\end{thebibliography}

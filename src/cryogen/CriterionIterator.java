@@ -74,7 +74,7 @@ public class CriterionIterator implements Initializable
 	{
 		setCurrentStage(currentStage);
 		setMemory(new SharedMemoryRepository(getCurrentStage()));
-		getCurrentStage().setOnCloseRequest(getMemory().confirmCloseEventHandler);//Set default close event
+		getCurrentStage().setOnCloseRequest(confirmCloseEventHandler);//Set default close event
 		//txtProjectCount.requestFocus();
 		//mnuLaF_BreathDark_Clicked(new ActionEvent());
 		lblCaption.setText("Please specify the " + SharedMemoryRepository.getCriterion_names()[SharedMemoryRepository.getCriterion_iterator()] + " rating for each project");
@@ -265,42 +265,53 @@ public class CriterionIterator implements Initializable
 	@FXML
 	protected void mnuFile_Preferences_Clicked(ActionEvent event)
 	{
-		try
-		{
-			Stage preferencesWindow = new Stage(StageStyle.DECORATED);
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("Preferences.fxml"));
-			preferencesWindow.setResizable(false);
-			preferencesWindow.setTitle("CROSS Preferences");
-			preferencesWindow.setScene(new javafx.scene.Scene((javafx.scene.layout.Pane) loader.load(), javafx.scene.paint.Color.TRANSPARENT));
-//			preferencesWindow.getScene().getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
-			Preferences preferences = loader.<Preferences>getController();
-			preferences.initialize(SharedMemoryRepository.getStage());
-			preferencesWindow.showAndWait();
-		}
-		catch (IOException ex)
-		{
-			memory.handleException(ex);
-		}
-		catch (Exception ex)
-		{
-			memory.handleException(ex);
-		}
+		getMemory().showPreferences();
+	}
+
+	/**
+	 * Event handler to view user manual
+	 * @param event
+	 */
+	@FXML
+	protected void mnuHelp_UserManual_Clicked(ActionEvent event)
+	{
+		SharedMemoryRepository.showManual();
 	}
 
 	@FXML
 	protected void mnuFile_Exit_Clicked(ActionEvent event)
 	{
-		Alert closeConfirmation = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to exit?");
-		Button exitButton = (Button) closeConfirmation.getDialogPane().lookupButton(ButtonType.OK);
+		getMemory().exit();
+	}
+
+	/**
+	 * Method to prompt before exit
+	 * Exits application with 0 error code if user prompt is confirmed else application continues
+	 */
+	public EventHandler<WindowEvent> confirmCloseEventHandler = event ->
+	{
+		Alert  closeConfirmation = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to exit?");
+		Button exitButton        = (Button) closeConfirmation.getDialogPane().lookupButton(ButtonType.OK);
 		exitButton.setText("Exit");
 		closeConfirmation.setHeaderText("Confirm Exit");
 		closeConfirmation.initModality(Modality.APPLICATION_MODAL);
 		closeConfirmation.initOwner(getCurrentStage());
 		DialogPane dialogPane = closeConfirmation.getDialogPane();
-//		dialogPane.getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
+		dialogPane.getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
 		dialogPane.getStyleClass().add("dlgDefault");
 		Optional<ButtonType> closeResponse = closeConfirmation.showAndWait();
-		if (ButtonType.OK.equals(closeResponse.get()))
-			System.exit(0);	}
+		if (!ButtonType.OK.equals(closeResponse.get()))
+			event.consume();
+	};
+
+	/**
+	 * Event handler to view user manual
+	 * @param event
+	 */
+	@FXML
+	protected void mnuHelp_License_Clicked(ActionEvent event)
+	{
+		SharedMemoryRepository.showLicense();
+	}
 }
 

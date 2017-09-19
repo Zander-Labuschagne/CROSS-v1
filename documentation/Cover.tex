@@ -1,0 +1,32 @@
+% !TEX root = \Cover.tex
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.2in]{geometry}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{tikz}
+
+\begin{document}
+	%Cover Page
+	\pagenumbering{gobble}
+    \begin{center}
+ 		\begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] (image) at (5,20){\includegraphics[width=8cm,height=8cm]{cryogen.png}};
+			 \node[align=center,black,font={\Huge}] at (9,17.5)
+			 {
+			 	\textbf{CROSS User Manual}
+			 };
+			 \node[align=center,black,font={\Large}] at (9,16)
+			 {
+			 	\textbf{Consensus-Ranking Organizational-Support System}
+			 };
+			 \node[align=center,black,font={\Large}] at (9.5,12){
+				Zander Labuschagne 23585137\\B.Sc.(Hons) Computer Science \& Information Systems 2017};
+			\node[align=left,black,font={\Large}] at (2.58,3){
+				September 2017};
+        \end{tikzpicture}
+       \end{center}
+\end{document}

@@ -25,9 +25,11 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
                <items>
-                  <MenuItem mnemonicParsing="false" text="About CROSS" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuHelp_UserManual_Clicked" text="User Manual" />
+                   <MenuItem mnemonicParsing="false" onAction="#mnuHelp_License_Clicked" text="License" />
                </items>
             </Menu>
+
          </menus>
       </MenuBar>
       <AnchorPane prefHeight="401.0" prefWidth="600.0" styleClass="vbox">

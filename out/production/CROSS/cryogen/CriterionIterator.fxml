@@ -6,12 +6,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="vbox" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.CriterionIterator">
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="600.0" styleClass="vbox" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.CriterionIterator">
    <children>
+      <MenuBar styleClass="menu-bar" VBox.vgrow="NEVER">
+         <menus>
+            <Menu mnemonicParsing="false" styleClass="menu" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#mnuFile_Preferences_Clicked" text="Preferences…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuFile_Exit_Clicked" text="Exit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About CROSS" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuHelp_UserManual_Clicked" text="User Manual" />
+                   <MenuItem mnemonicParsing="false" onAction="#mnuHelp_License_Clicked" text="License" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
       <AnchorPane fx:id="anchorPane" prefHeight="401.0" prefWidth="600.0" styleClass="vbox">
          <children>
-            <Button id="btnContinue" fx:id="btnContinue" layoutX="229.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnContinue_Clicked" prefHeight="26.0" prefWidth="142.0" styleClass="button" text="Continue" />
+            <Button id="btnContinue" fx:id="btnContinue" layoutX="229.0" layoutY="368.0" mnemonicParsing="false" onAction="#btnContinue_Clicked" prefHeight="26.0" prefWidth="142.0" styleClass="button" text="Continue" />
             <Label fx:id="lblCaption" layoutX="14.0" layoutY="14.0" text="Please specify the criterion rating for each project">
                <font>
                   <Font name="System Bold" size="16.0" />

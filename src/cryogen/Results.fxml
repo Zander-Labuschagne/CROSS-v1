@@ -12,7 +12,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.Results">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryogen.Results">
    <children>
 
        <MenuBar styleClass="menu-bar" VBox.vgrow="NEVER">
@@ -26,14 +26,15 @@
                </Menu>
                <Menu mnemonicParsing="false" text="Help">
                    <items>
-                       <MenuItem mnemonicParsing="false" text="About CROSS" />
+                       <MenuItem mnemonicParsing="false" onAction="#mnuHelp_UserManual_Clicked" text="User Manual" />
+                       <MenuItem mnemonicParsing="false" onAction="#mnuHelp_License_Clicked" text="License" />
                    </items>
                </Menu>
            </menus>
        </MenuBar>
       <AnchorPane fx:id="anchorPane" prefHeight="401.0" prefWidth="600.0">
          <children>
-            <Button id="btnContinue" fx:id="btnContinue" layoutX="229.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnContinue_Clicked" prefHeight="26.0" prefWidth="142.0" text="Finish" />
+            <Button id="btnContinue" fx:id="btnContinue" layoutX="229.0" layoutY="365.0" mnemonicParsing="false" onAction="#btnContinue_Clicked" prefHeight="26.0" prefWidth="142.0" text="Finish" />
             <Label layoutX="268.0" layoutY="14.0" text="Results">
                <font>
                   <Font name="System Bold" size="18.0" />

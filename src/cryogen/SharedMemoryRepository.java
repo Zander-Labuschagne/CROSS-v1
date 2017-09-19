@@ -1,15 +1,20 @@
 package cryogen;
 
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import java.awt.*;
+import java.io.*;
 import java.util.Optional;
 
 public class SharedMemoryRepository
@@ -252,7 +257,7 @@ public class SharedMemoryRepository
 		closeConfirmation.initOwner(getCurrentStage());
 		setExiting_status(true);
 		DialogPane dialogPane = closeConfirmation.getDialogPane();
-		dialogPane.getStylesheets().add(getClass().getResource(getLaF()).toExternalForm());
+//		dialogPane.getStylesheets().add(getClass().getResource(getLaF()).toExternalForm());
 		dialogPane.getStyleClass().add("dlgDefault");
 		Optional<ButtonType> closeResponse = closeConfirmation.showAndWait();
 		if (!ButtonType.OK.equals(closeResponse.get()))
@@ -261,4 +266,128 @@ public class SharedMemoryRepository
 			event.consume();
 		}
 	};
+
+	public static void showManual()
+	{
+		new Thread(new Runnable()
+		{
+			public void run()
+			{
+				SharedMemoryRepository memory = new SharedMemoryRepository();
+				try
+				{
+					File userGuide;
+					if (Desktop.isDesktopSupported())
+					{
+						InputStream  resource = this.getClass().getResource("/CROSS Manual.pdf").openStream();
+						File         file     = File.createTempFile("User Manual", "pdf");
+						OutputStream out      = new FileOutputStream(file);
+
+						byte[] buffer = new byte[1024];
+						int    len;
+						while ((len = resource.read(buffer)) != -1)
+							out.write(buffer, 0, len);
+						userGuide = file;
+						out.close();
+
+						Desktop.getDesktop().open(userGuide);
+						resource.close();
+					}
+				}
+				catch (IOException ex)
+				{
+					ex.printStackTrace();
+					memory.handleException(ex, "User Manual Error", "Could not open user manual", "Something went wrong while trying to open the user manual.\nDo you hav a PDF reader installed?");
+				}
+				catch (Exception ex)
+				{
+					ex.printStackTrace();
+					memory.handleException(ex);
+				}
+			}
+		}).start();
+	}
+
+	public static void showLicense()
+	{
+		new Thread(new Runnable()
+		{
+			public void run()
+			{
+				SharedMemoryRepository memory = new SharedMemoryRepository();
+				try
+				{
+					File userGuide;
+					if(Desktop.isDesktopSupported())
+					{
+						InputStream  resource = this.getClass().getResource("/LICENSE").openStream();
+						File         file     = File.createTempFile("EULA", "");
+						OutputStream out      = new FileOutputStream(file);
+
+						byte[] buffer = new byte[1024];
+						int len;
+						while((len = resource.read(buffer)) != -1)
+							out.write(buffer, 0, len);
+						userGuide = file;
+						out.close();
+
+						Desktop.getDesktop().open(userGuide);
+						resource.close();
+					}
+				}
+				catch(IOException ex)
+				{
+					ex.printStackTrace();
+					memory.handleException(ex, "User Manual Error", "Could not open user manual", "Something went wrong while trying to open the user manual.\nDo you hav a PDF reader installed?");
+				}
+				catch (Exception ex)
+				{
+					ex.printStackTrace();
+					memory.handleException(ex);
+				}
+			}
+		}).start();
+	}
+
+	public void showPreferences()
+	{
+		SharedMemoryRepository memory = new SharedMemoryRepository();
+
+		try
+		{
+			Stage      preferencesWindow = new Stage(StageStyle.DECORATED);
+			FXMLLoader loader            = new FXMLLoader(getClass().getResource("Preferences.fxml"));
+			preferencesWindow.setResizable(false);
+			preferencesWindow.setTitle("CROSS Preferences");
+			preferencesWindow.setScene(new javafx.scene.Scene((javafx.scene.layout.Pane) loader.load(), javafx.scene.paint.Color.TRANSPARENT));
+//			preferencesWindow.getScene().getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
+			Preferences preferences = loader.<Preferences>getController();
+			preferences.initialize(SharedMemoryRepository.getStage());
+			preferencesWindow.showAndWait();
+		}
+		catch (IOException ex)
+		{
+			memory.handleException(ex);
+		}
+		catch (Exception ex)
+		{
+			memory.handleException(ex);
+		}
+	}
+
+	public void exit()
+	{
+		Alert closeConfirmation = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to exit?");
+		Button exitButton = (Button) closeConfirmation.getDialogPane().lookupButton(ButtonType.OK);
+		exitButton.setText("Exit");
+		closeConfirmation.setHeaderText("Confirm Exit");
+		closeConfirmation.initModality(Modality.APPLICATION_MODAL);
+		closeConfirmation.initOwner(getCurrentStage());
+		DialogPane dialogPane = closeConfirmation.getDialogPane();
+//		dialogPane.getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
+		dialogPane.getStyleClass().add("dlgDefault");
+		Optional<ButtonType> closeResponse = closeConfirmation.showAndWait();
+		if (ButtonType.OK.equals(closeResponse.get()))
+			System.exit(0);
+	}
 }

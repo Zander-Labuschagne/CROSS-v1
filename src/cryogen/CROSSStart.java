@@ -8,13 +8,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
-import java.io.IOException;
+import java.awt.*;
+import java.io.*;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -152,21 +155,31 @@ public class CROSSStart implements Initializable
 		}
 	}
 
+	/**
+	 * Event handler to view user manual
+	 * @param event
+	 */
+	@FXML
+	protected void mnuHelp_UserManual_Clicked(ActionEvent event)
+	{
+		SharedMemoryRepository.showManual();
+	}
+
+	/**
+	 * Event handler to view user manual
+	 * @param event
+	 */
+	@FXML
+	protected void mnuHelp_License_Clicked(ActionEvent event)
+	{
+		SharedMemoryRepository.showLicense();
+	}
+
+
 	@FXML
 	protected void mnuFile_Exit_Clicked(ActionEvent event)
 	{
-
-		Alert closeConfirmation = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to exit?");
-		Button exitButton = (Button) closeConfirmation.getDialogPane().lookupButton(ButtonType.OK);
-		exitButton.setText("Exit");
-		closeConfirmation.setHeaderText("Confirm Exit");
-		closeConfirmation.initModality(Modality.APPLICATION_MODAL);
-		closeConfirmation.initOwner(getCurrentStage());
-		DialogPane dialogPane = closeConfirmation.getDialogPane();
-//		dialogPane.getStylesheets().add(getClass().getResource(SharedMemoryRepository.getLaF()).toExternalForm());
-		dialogPane.getStyleClass().add("dlgDefault");
-		Optional<ButtonType> closeResponse = closeConfirmation.showAndWait();
-		if (ButtonType.OK.equals(closeResponse.get()))
-			System.exit(0);	}
+		getMemory().exit();
+	}
 }
 
