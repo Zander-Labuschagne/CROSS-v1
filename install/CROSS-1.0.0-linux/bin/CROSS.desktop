@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=CROSS v1.0.0
+Comment=Application used to model Analytical Hierarchy Process for project evaluations
+GenericName=Office
+Exec=sh /opt/CROSS/bin/CROSS.sh
+Icon=/opt/CROSS/res/cryogen.png
+Type=Application
+Version=1.0.0
+Categories=GNOME;GTK;Utility;Office;
+MimeType=text/plain;

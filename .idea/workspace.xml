@@ -1,20 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CROSS 1.0" />
+    </artifacts-to-build>
+  </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/CROSSStart.fxml" afterPath="$PROJECT_DIR$/src/cryogen/CROSSStart.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/CROSSStart.java" afterPath="$PROJECT_DIR$/src/cryogen/CROSSStart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/CriterionIterator.fxml" afterPath="$PROJECT_DIR$/src/cryogen/CriterionIterator.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/CriterionIterator.java" afterPath="$PROJECT_DIR$/src/cryogen/CriterionIterator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Criterions.fxml" afterPath="$PROJECT_DIR$/src/cryogen/Criterions.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Criterions.java" afterPath="$PROJECT_DIR$/src/cryogen/Criterions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Main.java" afterPath="$PROJECT_DIR$/src/cryogen/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Results.fxml" afterPath="$PROJECT_DIR$/src/cryogen/Results.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/Results.java" afterPath="$PROJECT_DIR$/src/cryogen/Results.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cryogen/SharedMemoryRepository.java" afterPath="$PROJECT_DIR$/src/cryogen/SharedMemoryRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/CROSS_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/CROSS Manual.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/Cover.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/Cover.fdb_latexmk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/Cover.fls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/Cryptogen Manual.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/Cryptogen Manual.bbl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/Cryptogen Manual.blg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/Cryptogen Manual.fdb_latexmk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/Cryptogen Manual.fls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/Cryptogen Manual.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documentation/Cryptogen Manual.toc" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documentation/CROSS Manual.pdf" afterPath="$PROJECT_DIR$/documentation/CROSS Manual.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documentation/criterion_iterator.png" afterPath="$PROJECT_DIR$/documentation/criterion_iterator.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documentation/criterions.png" afterPath="$PROJECT_DIR$/documentation/criterions.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documentation/results.png" afterPath="$PROJECT_DIR$/documentation/results.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CROSS/CROSS Manual.pdf" afterPath="$PROJECT_DIR$/out/production/CROSS/CROSS Manual.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/CROSS Manual.pdf" afterPath="$PROJECT_DIR$/res/CROSS Manual.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documentation/CROSS Manual.aux" afterPath="$PROJECT_DIR$/documentation/CROSS Manual.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documentation/CROSS Manual.toc" afterPath="$PROJECT_DIR$/documentation/CROSS Manual.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CROSS/cryogen/CROSSStart.fxml" afterPath="$PROJECT_DIR$/out/production/CROSS/cryogen/CROSSStart.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CROSS/cryogen/CriterionIterator.fxml" afterPath="$PROJECT_DIR$/out/production/CROSS/cryogen/CriterionIterator.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CROSS/cryogen/Criterions.fxml" afterPath="$PROJECT_DIR$/out/production/CROSS/cryogen/Criterions.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CROSS/cryogen/Results.fxml" afterPath="$PROJECT_DIR$/out/production/CROSS/cryogen/Results.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,21 +105,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cryogen/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="41" column="35" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="35" />
+            <state relative-caret-position="621">
+              <caret line="34" column="65" lean-forward="false" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CriterionIterator.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CriterionIterator.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cryogen/CriterionIterator.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="46">
+              <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -320,17 +342,6 @@
               <item name="CROSS" type="b2602c69:ProjectViewProjectNode" />
               <item name="CROSS" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CROSS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CROSS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CROSS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CROSS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cryogen" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -356,8 +367,8 @@
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
@@ -578,21 +589,20 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85961000" />
+    <option name="totallyTimeSpent" value="88096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840237" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32823873" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3231441" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3231441" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920536" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -794,14 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cryogen/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="41" column="35" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/SharedMemoryRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
@@ -912,13 +914,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryogen/CriterionIterator.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="46">
+          <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryogen/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="34" column="65" lean-forward="false" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
@@ -927,7 +937,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>JavaFXApp</last-edited>
+          <last-edited>CROSS 1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -980,6 +990,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

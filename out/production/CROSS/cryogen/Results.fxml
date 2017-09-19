@@ -26,7 +26,6 @@
                </Menu>
                <Menu mnemonicParsing="false" text="Help">
                    <items>
-                       <MenuItem mnemonicParsing="false" text="About CROSS" />
                        <MenuItem mnemonicParsing="false" onAction="#mnuHelp_UserManual_Clicked" text="User Manual" />
                        <MenuItem mnemonicParsing="false" onAction="#mnuHelp_License_Clicked" text="License" />
                    </items>
