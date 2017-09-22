@@ -1,0 +1,831 @@
+/**
+ * @author Zander Labuschagne
+ * E-Mail: ZANDER.LABUSCHAGNE@PROTONMAIL.CH
+ * CSS script for the application look and feel
+ * Copyright (C) 2017  Zander Labuschagne, Elnette Moller
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation
+ */
+
+.root
+{
+    -fx-font-size: 8pt;
+    -fx-font-family: "DejaVu Sans Mono";
+}
+
+.vbox
+{
+    -fx-background-color: rgb(255, 255, 255);
+}
+.label
+{
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.txtDefault,
+.txtDefault .content
+{
+    -fx-background-color: rgb(218, 217, 216);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgb(86, 96, 96);
+    -fx-font-family: "Noto Sans";
+    -fx-highlight-fill: rgb(52, 152, 219);
+    -fx-background-insets: 0;
+    -fx-text-box-border: transparent;
+    -fx-focus-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+}
+.txtDefault:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+.txtDefault:focused
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+/* The main scrollbar CSS class of TextArea */
+.txtDefault .scroll-bar:horizontal,
+.txtDefault  .scroll-bar:vertical
+{
+    -fx-background-color:rgb(218, 217, 216);
+}
+/* The increment and decrement button CSS class of scrollbar */
+.txtDefault .increment-button,
+.txtDefault .decrement-button
+{
+    -fx-background-color:transparent;
+    -fx-border-color:rgb(86, 96, 96);
+}
+/* The main scrollbar **track** CSS class  */
+.txtDefault .scroll-bar:horizontal .track,
+.txtDefault .scroll-bar:vertical .track
+{
+    -fx-background-color: rgb(218, 217, 216);
+    -fx-border-color:rgb(86, 96, 96);
+    /*-fx-border-color:#000;*/
+    -fx-background-radius: 0em;
+}
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.txtDefault .scroll-bar:horizontal .thumb,
+.txtDefault .scroll-bar:vertical .thumb
+{
+    /*-fx-background-color:derive(black,50%);*/
+    -fx-background-color:rgb(52, 152, 219);
+    -fx-background-insets: 0, 0, 0;
+    -fx-background-radius: 0em;
+}
+/* The main scrollbar **track** CSS class on event of "hover" and "pressed" */
+.txtDefault .scroll-bar:horizontal:hover .track,
+.txtDefault .scroll-bar:horizontal:pressed .track,
+.txtDefault .scroll-bar:vertical:hover .track,
+.txtDefault .scroll-bar:vertical:pressed .track
+{
+    /* -fx-background-color: derive(#434343,20%);*/
+    -fx-opacity: 0.2;
+    -fx-background-radius: 0em;
+}
+
+/* The main scrollbar **thumb** CSS class on event of "hover" and "pressed" */
+.txtDefault .scroll-bar .thumb:hover,
+.txtDefault .scroll-bar .thumb:pressed
+{
+    -fx-background-color: rgb(245, 245, 245);
+}
+.txtDefault .increment-button:hover,
+.txtDefault .decrement-button:hover
+{
+    -fx-background-color:rgba(52, 152, 219, 0.4);
+}
+
+.btnEncryptMessage
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgb(86, 96, 96);
+    -fx-border-width: 0.75;
+    -fx-background-image: url("/icons/lock.png");
+    -fx-background-size: 12px 12px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left 12px top 7px;
+}
+
+.btnEncryptMessage:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+}
+.btnEncryptMessage:focused
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+
+.btnEncryptFiles
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgb(86, 96, 96);
+    -fx-border-width: 0.75;
+    -fx-background-image: url("/icons/lock.png");
+    -fx-background-size: 12px 12px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left 12px top 7px;
+}
+.btnEncryptFiles:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+}
+.btnEncryptFiles:focused
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+
+.btnDecryptMessage
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgb(86, 96, 96);
+    -fx-border-width: 0.75;
+    -fx-background-image: url("/icons/unlock.png");
+    -fx-background-size: 13px 16px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left 14px top 5px;
+}
+.btnDecryptMessage:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 1), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+}
+.btnDecryptMessage:focused
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+
+.btnDecryptFiles
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgb(86, 96, 96);
+    -fx-border-width: 0.75;
+    -fx-background-image: url("/icons/unlock.png");
+    -fx-background-size: 13px 16px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left 12px top 5px;
+}
+.btnDecryptFiles:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(0, 93, 255, 1), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+}
+.btnDecryptFiles:focused
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+
+.pneDefault
+{
+    -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.pneDefault:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+.pneDefault > .title
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+    -fx-border-color: rgb(86, 96, 96);
+
+}
+.pneDefault > .title > .arrow-button
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
+}
+.pneDefault > .title > .arrow-button .arrow
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+.pneDefault > *.content
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 0 1 1 1;
+    -fx-padding: 0.167em;
+    -fx-border-color: rgb(86, 96, 96);
+}
+.pneDefaultError
+{
+    -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
+}
+.pneDefaultError:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+.pneDefaultError > .title
+{
+    -fx-background-color: rgba(255, 0, 0, 0.1);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+    -fx-border-color: rgba(255, 0, 0, 0.6);
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
+
+}
+.pneDefaultError > .title > .arrow-button
+{
+    -fx-background-color: rgba(255, 0, 0, 0.1);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
+}
+.pneDefaultError > .title > .arrow-button .arrow
+{
+    -fx-background-color: rgba(255, 0, 0, 0.1);
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+.pneDefaultError > *.content
+{
+    -fx-background-color: rgba(255, 0, 0, 0.1);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 0 1 1 1;
+    -fx-padding: 0.167em;
+    -fx-border-color: rgba(255, 0, 0, 0.6);
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
+}
+
+.radDefault
+{
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.radDefault .radio
+{
+    -fx-background-color: rgb(218, 217, 216);
+}
+.radDefault .dot
+{
+    -fx-mark-highlight-color: rgb(86, 96, 96);
+    -fx-mark-color: rgb(86, 96, 96);
+}
+
+.menu-bar
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.menu
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill:rgb(86, 96, 96);
+}
+.menu:hover
+{
+    -fx-background-color:rgb(255, 255, 255);
+}
+.menu-bar .label
+{
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.menu-item
+{
+    -fx-background-color:rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.menu-item:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.menu .label
+{
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.menu-button
+{
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.context-menu
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.pneFilePane
+{
+    -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.pneFilePane:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+.pneFilePane > .title
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+    -fx-border-color: rgb(86, 96, 96);
+
+}
+.pneFilePane > .title > .arrow-button
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
+}
+.pneFilePane > .title > .arrow-button .arrow
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+.pneFilePane > *.content
+{
+    -fx-background-color: rgb(218, 217, 216);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 0 1 1 1;
+    -fx-padding: 0.167em;
+    -fx-border-color: rgb(86, 96, 96);
+
+}
+.pneFilePaneDropped
+{
+    -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.pneFilePaneDropped:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+.pneFilePaneDropped > .title
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+    -fx-border-color: rgb(86, 96, 96);
+}
+.pneFilePaneDropped > .title > .arrow-button
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
+}
+.pneFilePaneDropped > .title > .arrow-button .arrow
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+.pneFilePaneDropped > *.content
+{
+    -fx-background-color: rgb(218, 217, 216);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 0 1 1 1;
+    -fx-padding: 0.167em;
+    -fx-background-image: url("/icons/files.png");
+    -fx-background-size: 180 160;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-border-color: rgb(86, 96, 96);
+}
+.pneFilePaneDrag
+{
+    -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgb(86, 96, 96);
+}
+.pneFilePaneDrag:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+.pneFilePaneDrag > .title
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill:rgb(86, 96, 96);
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+    -fx-border-color: rgb(86, 96, 96);
+}
+.pneFilePaneDrag > .title > .arrow-button
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
+}
+.pneFilePaneDrag > .title > .arrow-button .arrow
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+.pneFilePaneDrag > *.content
+{
+    -fx-background-color: rgba(52, 152, 219, 0.4);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 0 1 1 1;
+    -fx-padding: 0.167em;
+    /*-fx-background-image: url("/icons/down8.png");
+    -fx-background-size: 180 160;*/
+    -fx-background-image: url("/icons/add128.png");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-border-color: rgb(86, 96, 96);
+
+}
+.pneFilePaneError
+{
+    -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgba(255, 0, 0, 0.6);
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
+}
+.pneFilePaneError:hover
+{
+    -fx-border-color: rgba(255, 0, 0, 0.6);
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
+}
+.pneFilePaneError > .title
+{
+    -fx-background-color: rgba(255, 0, 0, 0.1);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+    -fx-border-color: rgba(255, 0, 0, 0.6);
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
+}
+.pneFilePaneError > .title > .arrow-button
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
+}
+.pneFilePaneError > .title > .arrow-button .arrow
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+.pneFilePaneError > *.content
+{
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.1), 5, 0.65, 0, 0);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 0 1 1 1;
+    -fx-padding: 0.167em;
+    /*-fx-background-image: url("/icons/down8.png");*/
+    -fx-background-image: url("/icons/plus64_-60.png");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-border-color: rgba(255, 0, 0, 0.6);
+    -fx-background-color: rgba(255, 0, 0, 0.1);
+}
+
+.stackPaneIcon
+{
+    -fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.stackPaneIcon > *.content
+{
+    -fx-background-color: rgb(218, 217, 216);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: 0, 0 1 1 1;
+    -fx-padding: 0.167em;
+    -fx-background-image: url("/icons/cryogen/icon.png");
+    -fx-background-size: 180 160;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-border-color: rgb(86, 96, 96);
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Dialog                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+.dlgDefault
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-padding: 0;
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.dlgDefault > .expandable-content
+{
+    -fx-padding: 0.666em; /* 8px */
+}
+.dlgDefault > .button-bar > .container
+{
+    -fx-padding: 0.833em; /* 10px */
+}
+.dlgDefault > .button
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgb(86, 96, 96);
+    -fx-border-width: 0.3;
+}
+.dlgDefault > .content.label
+{
+    -fx-alignment: top-left;
+    -fx-padding: 1.333em 0.833em 0 0.833em; /* 16px 10px 0px 10px */
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.dlgDefault > .content
+{
+    -fx-padding: 0.833em; /* 10 */
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.dlgDefault:no-header .graphic-container
+{
+    -fx-padding: 0.833em 0 0 0.833em; /* 10px 0px 0px 10px */
+}
+.dlgDefault:header .header-panel
+{
+    /*-fx-padding: 0.833em 1.166em 0.833em 1.166em; *//* 10px 14px 10px 14px */
+    -fx-padding: 0.833em; /* 10px */
+    -fx-background-color: -fx-box-border, rgb(218, 217, 216);
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.dlgDefault:header .header-panel .label
+{
+    -fx-font-size: 1.167em; /* 14px */
+    -fx-wrap-text: true;
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.dlgDefault:header .header-panel .graphic-container
+{
+    /* This prevents the text in the header running directly into the graphic */
+    -fx-padding: 0 0 0 0.833em; /* 0px 0px 0px 10px */
+}
+.dlgDefault > .button-bar > .container > .details-button
+{
+    -fx-alignment: baseline-left;
+    -fx-focus-traversable: false;
+    -fx-padding: 0.416em; /* 5px */
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgb(86, 96, 96);
+    -fx-border-width: 0.3;
+}
+
+.alert.confirmation.dlgDefault,
+.text-input-dialog.dlgDefault,
+.choice-dialog.dlgDefault
+{
+    -fx-graphic: url("/icons/confirmation32.png");
+}
+
+.alert.information.dlgDefault
+{
+    /*-fx-graphic: url("dialog-information.png");*/
+}
+.alert.error.dlgDefault
+{
+    -fx-graphic: url("/icons/error32.png");
+}
+.alert.warning.dlgDefault
+{
+    -fx-graphic: url("/icons/warning32.png");
+}
+
+/* ====   BUTTON LIKE THINGS   ============================================== */
+
+.button,
+.toggle-button/*,
+.radio-button > .radio,*/
+    /*.check-box > .box,*/
+    /*.menu-button,
+    .choice-box,
+    .color-picker.split-button > .color-picker-label*/,
+    .combo-box-base,
+    .combo-box-base:editable > .arrow-button
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgb(86, 96, 96);
+    -fx-border-width: 0.75;
+    /*-fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    /*-fx-alignment: CENTER;
+    -fx-content-display: LEFT;*/
+}
+.menu-button > .label
+{
+    -fx-alignment: CENTER_LEFT;
+}
+.button:hover,
+.toggle-button:hover,
+.radio-button:hover > .radio,
+.check-box:hover > .box,
+.menu-button:hover,
+.split-menu-button > .label:hover,
+.split-menu-button > .arrow-button:hover,
+.slider .thumb:hover,
+.scroll-bar > .thumb:hover,
+.scroll-bar > .increment-button:hover,
+.scroll-bar > .decrement-button:hover,
+.choice-box:hover,
+.color-picker.split-button > .arrow-button:hover,
+.color-picker.split-button > .color-picker-label:hover,
+.combo-box-base:hover,
+.combo-box-base:editable > .arrow-button:hover,
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover,
+.tab-pane > .tab-header-area > .control-buttons-tab > .container > .tab-down-button:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+}
+.button:armed/*,
+.toggle-button:armed,
+.radio-button:armed > .radio,
+.check-box:armed .box,
+.menu-button:armed,
+.split-menu-button:armed > .label,
+.split-menu-button > .arrow-button:pressed,
+.split-menu-button:showing > .arrow-button,
+.slider .thumb:pressed,
+.scroll-bar > .thumb:pressed,
+.scroll-bar > .increment-button:pressed,
+.scroll-bar > .decrement-button:pressed,
+.choice-box:showing,
+.combo-box-base:showing,
+.combo-box-base:editable:showing > .arrow-button,
+.spinner .increment-arrow-button:pressed,
+.spinner .decrement-arrow-button:pressed,
+.tab-pane > .tab-header-area > .control-buttons-tab > .container > .tab-down-button:pressed*/
+{
+    -fx-color: -fx-pressed-base;
+}
+.button:focused/*,
+.toggle-button:focused,
+.radio-button:focused > .radio,
+.check-box:focused > .box,
+.menu-button:focused,
+.choice-box:focused,
+.color-picker.split-button:focused > .color-picker-label,
+.combo-box-base:focused,
+.slider:focused .thumb*/
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-background-insets: -0.2, 1, 2, -1.4, 2.6;
+    -fx-background-radius: 3, 2, 1, 4, 1;
+}
+
+/* ====   DISABLED THINGS   ================================================= */
+
+.label:disabled,
+.button:disabled,
+.toggle-button:disabled,
+.radio-button:disabled,
+.check-box:disabled,
+.hyperlink:disabled,
+.menu-button:disabled,
+.split-menu-button:disabled,
+.slider:disabled,
+.scroll-bar:disabled,
+.scroll-pane:disabled,
+.progress-bar:disabled,
+.progress-indicator:disabled,
+.text-input:disabled,
+.choice-box:disabled,
+.combo-box-base:disabled,
+.date-cell:disabled > *, /* This is set on children so border is not affected. */
+.list-view:disabled,
+.tree-view:disabled,
+.table-view:disabled,
+.tree-table-view:disabled,
+.tab-pane:disabled,
+.titled-pane:disabled > .title,
+.accordion:disabled > .titled-pane > .title,
+.tab-pane > .tab-header-area > .headers-region > .tab:disabled,
+.menu:disabled,
+.menu-item:disabled > .label,
+.menu-item:disabled,
+.list-cell:filled:selected:focused:disabled,
+.list-cell:filled:selected:disabled,
+.tree-cell:filled:selected:focused:disabled,
+.tree-cell:filled:selected:disabled,
+.tree-cell > .tree-disclosure-node:disabled,
+.tree-table-row-cell > .tree-disclosure-node:disabled,
+.table-row-cell:selected:disabled,
+.tree-table-row-cell:selected:disabled,
+.table-cell:selected:disabled,
+.tree-table-cell:selected:disabled,
+.spinner:disabled
+{
+    -fx-opacity: 0.4;
+}
+
+.anchorPaneDefault
+{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-border-color: rgb(86, 96, 96);
+}
+.progress-barDefault
+{
+    -fx-progress-color: rgba(52, 152, 219, 0.4);
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(218,217,216,0.1);
+    -fx-text-fill: rgb(86, 96, 96);
+}
+.progress-barDefault > .track
+{
+    -fx-text-box-border: rgb(218, 217, 216);
+    -fx-control-inner-background: rgba(218,217,216,0.1);
+}
+.progress-barDefault > .bar
+{
+    -fx-background-color: rgba(52, 152, 219, 0.4);
+    -fx-progress-color: rgba(52, 152, 219, 0.4);
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+}
+
+.combo-box-base .list-view .list-cell:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.combo-box-base .list-cell:selected
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-background-insets: -0.2, 1, 2, -1.4, 2.6;
+    -fx-background-radius: 3, 2, 1, 4, 1;
+}
+
+.combo-box-base .list-cell
+{
+
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.combo-box-base .list-view
+{
+
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.combo-box-base .list-cell:filled:selected:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+    -fx-text-fill: rgb(86, 96, 96);
+    -fx-background-insets: -0.2, 1, 2, -1.4, 2.6;
+    -fx-background-radius: 3, 2, 1, 4, 1;
+}
+
+.combo-box-base:hover
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+    -fx-background-color: rgba(0,93,255,0.1);
+    -fx-text-fill: rgb(86, 96, 96);
+}
+
+.combo-box-base:showing
+{
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.6), 5, 0.65, 0, 0);
+
+}
