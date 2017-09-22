@@ -16,7 +16,7 @@ This application was never tested on a Windows platform and no support is provid
 **Acknowledgements**<br />
 This project was developed and is being maintained with JetBrains IntelliJ IDEA Ultimate edition with a JetBrains student license. This documentation was compiled with LaTeX. GitHub is used to do version control over this project since it is easily integrable with JetBrains IntelliJ. The decision support knowledge used in this project was gained from Introduction to management science by Bernard Taylor and Prof. Hennie Kruger, the lecturer presenting the Decision Support Systems I and Decision Support Systems II honours modules at the University of the North-West: Potchefstroom Campus. The inspiration of the project came from Prof. Madjid Tavana as mentioned earlier. I would like to thank Elnette Moller for giving me permnission to reuse our effort we have put in, in our previous Cryptogen application for this assignment of mine.
 
-References:
+**References:**
 
 [1] Tavana, Madjid. 2003. CROSS: A Multicriteria Group-Decision-Making Model for Evaluating and Prioritizing Advanced-Technology Projects at NASA.
 
