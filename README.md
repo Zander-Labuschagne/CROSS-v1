@@ -1,5 +1,5 @@
 # CROSS
-**Consensus-Ranking Organizational-Support System
+**Consensus-Ranking Organizational-Support System**
 
 CROSS is developed as part of the Decision Support Systems II module for B.Sc. Computer Science & Information Systems Honours students at the North-West University, Potchefstroom Campus. The goal of this project was to provide students with practical experience in any decision support model chosen by the student. It was expected of a student to develop a decision support application with a user friendly graphical user interface that demonstrates any decision support model chosen by the student that is at least to difficult for a second year computer science student to complete. This particular application was inspired by the original CROSS Excel system developed by Dr. Madjid Tavana who developed the system to aid NASA with their decision making in their projects [3]. The original system developed by Dr. Tavana made use of specific criteria set by the people at NASA [2], this project generalized the idea to suit any type of projects.
 
@@ -13,7 +13,7 @@ This project was partly developed on a macOS 10.12.6 system and includes a dedic
 3. Windows
 This application was never tested on a Windows platform and no support is provided for Windows systems. It is also very complicated to create an installer or portable .exe for Windows from a .jar executable and the little third party software that exists to make this process simpler is very expensive hence no Windows executable or installer. There is no guarantee that the developers will address any bugs or problems experienced on Windows systems but feedback is welcome just to keep record of what functions well. Since a Java .jar file is provided one can run the .jar executable on Windows systems if Java Runtime Environment 1.8 or higher is installed. To be able to read this document a PDF reader is required such as Adobe Reader.
 
-**Acknowledgements**__
+**Acknowledgements** . 
 This project was developed and is being maintained with JetBrains IntelliJ IDEA Ultimate edition with a JetBrains student license. This documentation was compiled with LATEX. GitHub is used to do version control over this project since it is easily integrable with JetBrains IntelliJ. The decision support knowledge used in this project was gained from Introduction to management science by Bernard Taylor and Prof. Hennie Kruger, the lecturer presenting the Decision Support Systems I and Decision Support Systems II module at the University of the North-West: Potchefstroom Campus. The inspiration of the project came from Prof. Madjid Tavana as mentioned earlier. I would like to thank Elnette Moller for giving me permnission to reuse our effort we have put in, in our previous Cryptogen application for this assignment of mine.
 
 References:
