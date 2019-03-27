@@ -1,5 +1,5 @@
 # CROSS v1
-**Consensus-Ranking Organizational-Support System**
+## Consensus-Ranking Organizational-Support System
 
 CROSS is developed as part of the Decision Support Systems II module for B.Sc. Computer Science & Information Systems module at the North-West University, Potchefstroom Campus. The goal of this project was to provide students with practical experience in any decision support model chosen by the student. It was expected of a student to develop a decision support application with a user friendly graphical user interface that demonstrates any decision support model chosen by the student that is at least too difficult for a second year computer science student to complete. This particular application was inspired by the original CROSS Excel system developed by Dr. Madjid Tavana who developed the system to aid NASA with their decision making in their projects. The original system developed by Dr. Tavana made use of specific criteria set by the people at NASA [2], this project generalize the idea to suit any type of projects.
 
